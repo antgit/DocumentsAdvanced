@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="2">
+      <Document Ref="2" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>Document</Alias>
+        <Columns isList="true" count="39">
+          <value>DocNo,System.String</value>
+          <value>DocDate,System.DateTime</value>
+          <value>AgFromName,System.String</value>
+          <value>AgToName,System.String</value>
+          <value>Summa,System.Decimal</value>
+          <value>AgentFromAcount,System.String</value>
+          <value>AgentToAcount,System.String</value>
+          <value>AgentFromBank,System.String</value>
+          <value>AgentToBank,System.String</value>
+          <value>Memo,System.String</value>
+          <value>AgentFromPhone,System.String</value>
+          <value>AgentToPhone,System.String</value>
+          <value>AgentToAddres,System.String</value>
+          <value>AgentFromAddres,System.String</value>
+          <value>PaymentMethod,System.String</value>
+          <value>DeliveryCondition,System.String</value>
+          <value>AgentFromInn,System.String</value>
+          <value>AgentToInn,System.String</value>
+          <value>AgentFromReg,System.String</value>
+          <value>AgentToReg,System.String</value>
+          <value>AgentFromBankMfo,System.String</value>
+          <value>AgentToBankMfo,System.String</value>
+          <value>AgentFromOkpo,System.String</value>
+          <value>AgentToOkpo,System.String</value>
+          <value>AgentFromDirector,System.String</value>
+          <value>AgentFromBuh,System.String</value>
+          <value>AgentToBuh,System.String</value>
+          <value>AgentToDirector,System.String</value>
+          <value>AgentToCashier,System.String</value>
+          <value>AgentFromCashier,System.String</value>
+          <value>DepatmentToName,System.String</value>
+          <value>DepatmentFromName,System.String</value>
+          <value>DateStart,System.Nullable`1[System.DateTime]</value>
+          <value>DateEnd,System.Nullable`1[System.DateTime]</value>
+          <value>EmployerName,System.String</value>
+          <value>EmployerFirstName,System.String</value>
+          <value>EmployerLastName,System.String</value>
+          <value>EmployerMidleName,System.String</value>
+          <value>WorkPost,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Document</Name>
+        <NameInSource>Document</NameInSource>
+      </Document>
+      <DocumentDetail Ref="3" type="Stimulsoft.Report.Dictionary.StiEnumerableSource" isKey="true">
+        <Alias>DocumentDetail</Alias>
+        <Columns isList="true" count="6">
+          <value>ProductName,System.String</value>
+          <value>UnitName,System.String</value>
+          <value>ProductCode,System.String</value>
+          <value>Qty,System.Decimal</value>
+          <value>Price,System.Decimal</value>
+          <value>Summa,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>DocumentDetail</Name>
+        <NameInSource>DocumentDetail</NameInSource>
+      </DocumentDetail>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <ReportTitleBand1 Ref="5" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,4,190,191</ClientRectangle>
+          <Components isList="true" count="5">
+            <txtDocNo Ref="6" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>40,1,46,6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,12</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>txtDocNo</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Document.DocNo}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </txtDocNo>
+            <lbDate Ref="7" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>86,1,10,6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,12</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>lbDate</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>от</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </lbDate>
+            <txtDocDate Ref="8" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>96,1,44,6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>txtDocDate</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Document.DocDate}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="9" type="DateFormat" isKey="true" />
+              <VertAlignment>Center</VertAlignment>
+            </txtDocDate>
+            <Text1 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17,1,23,6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,12,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Приказ №</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text2 Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,12,190,22</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,14</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>       Уволить {Document.EmployerLastName} {Document.EmployerFirstName} {Document.EmployerMidleName} с занимаемой должности  по собственному желанию c {Format("{0:dd.MM.yyyy}", Document.DateEnd)} </Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </ReportTitleBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>ad840cb6804a4510bffcfd29e6cf02a8</Guid>
+      <Margins>10,10,10,10</Margins>
+      <Name>Page1</Name>
+      <PageHeight>297</PageHeight>
+      <PageWidth>210</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="12" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="13" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Приказ о увольнении сотрудника</ReportAlias>
+  <ReportChanged>6/1/2012 9:14:26 AM</ReportChanged>
+  <ReportCreated>9/8/2008 3:56:18 PM</ReportCreated>
+  <ReportFile>d:\Visual Studio 2005\DocumentsSolution3Adv\Source\DocumentLibrary\BusinessObjects.DocumentLibrary\Печатные формы\Person\PersonPrintFormOut.mrt</ReportFile>
+  <ReportGuid>f476eec7102d4d939eb92e9c45327e0d</ReportGuid>
+  <ReportName>FinancePrintFormIn</ReportName>
+  <ReportUnit>Millimeters</ReportUnit>
+  <ReportVersion>2012.2.1304</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.ReportControls;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    
+    public class FinancePrintFormIn : Stimulsoft.Report.StiReport
+    {
+        
+        public FinancePrintFormIn()
+        {
+            this.InitializeComponent();
+        }
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

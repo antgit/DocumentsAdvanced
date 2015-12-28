@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:11394/biservices/ServiceUpdate.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfCustomViewList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomViewList" nillable="true" type="tns:CustomViewList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomViewList" nillable="true" type="tns:ArrayOfCustomViewList" />
+  <xs:complexType name="CustomViewList">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomViewList" nillable="true" type="tns:CustomViewList" />
+  <xs:complexType name="ArrayOfCodeName">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CodeName" nillable="true" type="tns:CodeName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCodeName" nillable="true" type="tns:ArrayOfCodeName" />
+  <xs:complexType name="CodeName">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CodeName" nillable="true" type="tns:CodeName" />
+  <xs:complexType name="ArrayOfCurrency">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Currency" nillable="true" type="tns:Currency" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurrency" nillable="true" type="tns:ArrayOfCurrency" />
+  <xs:complexType name="Currency">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Currency" nillable="true" type="tns:Currency" />
+  <xs:complexType name="ArrayOfAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Account" nillable="true" type="tns:Account" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccount" nillable="true" type="tns:ArrayOfAccount" />
+  <xs:complexType name="Account">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Account" nillable="true" type="tns:Account" />
+  <xs:complexType name="ArrayOfCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Country" nillable="true" type="tns:Country" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountry" nillable="true" type="tns:ArrayOfCountry" />
+  <xs:complexType name="Country">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Country" nillable="true" type="tns:Country" />
+  <xs:complexType name="ArrayOfDataCatalog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataCatalog" nillable="true" type="tns:DataCatalog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataCatalog" nillable="true" type="tns:ArrayOfDataCatalog" />
+  <xs:complexType name="DataCatalog">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataCatalog" nillable="true" type="tns:DataCatalog" />
+  <xs:complexType name="ArrayOfFolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Folder" nillable="true" type="tns:Folder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFolder" nillable="true" type="tns:ArrayOfFolder" />
+  <xs:complexType name="Folder">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Folder" nillable="true" type="tns:Folder" />
+  <xs:complexType name="ArrayOfHierarchy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Hierarchy" nillable="true" type="tns:Hierarchy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHierarchy" nillable="true" type="tns:ArrayOfHierarchy" />
+  <xs:complexType name="Hierarchy">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Hierarchy" nillable="true" type="tns:Hierarchy" />
+  <xs:complexType name="ArrayOfKnowledge">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Knowledge" nillable="true" type="tns:Knowledge" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKnowledge" nillable="true" type="tns:ArrayOfKnowledge" />
+  <xs:complexType name="Knowledge">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Knowledge" nillable="true" type="tns:Knowledge" />
+  <xs:complexType name="ArrayOfLibrary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Library" nillable="true" type="tns:Library" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLibrary" nillable="true" type="tns:ArrayOfLibrary" />
+  <xs:complexType name="Library">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Library" nillable="true" type="tns:Library" />
+  <xs:complexType name="ArrayOfMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessage" nillable="true" type="tns:ArrayOfMessage" />
+  <xs:complexType name="Message">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Message" nillable="true" type="tns:Message" />
+  <xs:complexType name="ArrayOfNote">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Note" nillable="true" type="tns:Note" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNote" nillable="true" type="tns:ArrayOfNote" />
+  <xs:complexType name="Note">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Note" nillable="true" type="tns:Note" />
+  <xs:complexType name="ArrayOfPriceName">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceName" nillable="true" type="tns:PriceName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPriceName" nillable="true" type="tns:ArrayOfPriceName" />
+  <xs:complexType name="PriceName">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceName" nillable="true" type="tns:PriceName" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ArrayOfRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Rate" nillable="true" type="tns:Rate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRate" nillable="true" type="tns:ArrayOfRate" />
+  <xs:complexType name="Rate">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Rate" nillable="true" type="tns:Rate" />
+  <xs:complexType name="ArrayOfStorageCell">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageCell" nillable="true" type="tns:StorageCell" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStorageCell" nillable="true" type="tns:ArrayOfStorageCell" />
+  <xs:complexType name="StorageCell">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StorageCell" nillable="true" type="tns:StorageCell" />
+  <xs:complexType name="ArrayOfTown">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Town" nillable="true" type="tns:Town" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTown" nillable="true" type="tns:ArrayOfTown" />
+  <xs:complexType name="Town">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Town" nillable="true" type="tns:Town" />
+  <xs:complexType name="ArrayOfWhatNew">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WhatNew" nillable="true" type="tns:WhatNew" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWhatNew" nillable="true" type="tns:ArrayOfWhatNew" />
+  <xs:complexType name="WhatNew">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasePropertyChangeSupport">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrentState" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Guid" type="ser:guid" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Memo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WhatNew" nillable="true" type="tns:WhatNew" />
+  <xs:complexType name="BasePropertyChangeSupport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsChanged" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasePropertyChangeSupport" nillable="true" type="tns:BasePropertyChangeSupport" />
+  <xs:complexType name="ArrayOfXmlStorage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="XmlStorage" nillable="true" type="tns:XmlStorage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfXmlStorage" nillable="true" type="tns:ArrayOfXmlStorage" />
+  <xs:complexType name="XmlStorage">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="XmlStorage" nillable="true" type="tns:XmlStorage" />
+  <xs:complexType name="ArrayOfEntityType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EntityType" nillable="true" type="tns:EntityType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEntityType" nillable="true" type="tns:ArrayOfEntityType" />
+  <xs:complexType name="EntityType">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntityType" nillable="true" type="tns:EntityType" />
+  <xs:complexType name="ArrayOfEntityDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EntityDocument" nillable="true" type="tns:EntityDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEntityDocument" nillable="true" type="tns:ArrayOfEntityDocument" />
+  <xs:complexType name="EntityDocument">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntityDocument" nillable="true" type="tns:EntityDocument" />
+  <xs:complexType name="ArrayOfFactName">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FactName" nillable="true" type="tns:FactName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFactName" nillable="true" type="tns:ArrayOfFactName" />
+  <xs:complexType name="FactName">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FactName" nillable="true" type="tns:FactName" />
+  <xs:complexType name="ArrayOfChainKind">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChainKind" nillable="true" type="tns:ChainKind" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChainKind" nillable="true" type="tns:ArrayOfChainKind" />
+  <xs:complexType name="ChainKind">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChainKind" nillable="true" type="tns:ChainKind" />
+  <xs:complexType name="ArrayOfBranche">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Branche" nillable="true" type="tns:Branche" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBranche" nillable="true" type="tns:ArrayOfBranche" />
+  <xs:complexType name="Branche">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Branche" nillable="true" type="tns:Branche" />
+  <xs:complexType name="ArrayOfResourceString">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceString" nillable="true" type="tns:ResourceString" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResourceString" nillable="true" type="tns:ArrayOfResourceString" />
+  <xs:complexType name="ResourceString">
+    <xs:sequence>
+      <xs:element ref="xs:schema" />
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceString" nillable="true" type="tns:ResourceString" />
+</xs:schema>

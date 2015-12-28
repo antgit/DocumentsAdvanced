@@ -1,0 +1,1776 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50F0D911-CB4F-4273-9939-4E5F8A2E880F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessObjects.Windows</RootNamespace>
+    <AssemblyName>BusinessObjects.Windows</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>BusinessObjectCore.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Dll\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Dll\Release\</OutputPath>
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\Dll\Release\BusinessObjects.Windows.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.SpellChecker.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v12.1.Reporting.Extensions, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpellChecker.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraWizard.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Stimulsoft.Base, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Stimulsoft Reports.Ultimate 2012.1\Bin\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Stimulsoft Reports.Ultimate 2012.1\Bin\Stimulsoft.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls.Win, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Stimulsoft Reports.Ultimate 2012.1\Bin\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Stimulsoft Reports.Ultimate 2012.1\Bin\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Design, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Stimulsoft Reports.Ultimate 2012.1\Bin\Stimulsoft.Report.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Win, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Stimulsoft Reports.Ultimate 2012.1\Bin\Stimulsoft.Report.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Workflow.Activities">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.ComponentModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ExtentionsImages.cs" />
+    <Compile Include="Common\ExtentionString.cs" />
+    <Compile Include="Common\FormStateMaintainer.cs" />
+    <Compile Include="Common\IContentModule.cs" />
+    <Compile Include="Common\ResourceImage.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleBookKeep.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleByFolders.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleDogovor.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleDogovorManager.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleFinance.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleFinPlan.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleHierarchyRoot.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleMain.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModulePerson.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModulePrice.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleSale.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleSaleLeave.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleSaleManager.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleSalePrice.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleService.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleStore.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleTax.cs" />
+    <Compile Include="ContentBuilderAdv\ContentModuleTerritoryUA.cs" />
+    <Compile Include="ContentBuilder\ContentModuleAgentBankAccount.cs" />
+    <Compile Include="ContentBuilder\ContentModuleAutonum.cs" />
+    <Compile Include="ContentBuilder\ContentModuleCalendar.cs" />
+    <Compile Include="ContentBuilder\ContentModuleCodeName.cs" />
+    <Compile Include="ContentBuilder\ContentModuleCountry.cs" />
+    <Compile Include="ContentBuilder\ContentModuleDataCatalog.cs" />
+    <Compile Include="ContentBuilder\ContentModuleDateRegion.cs" />
+    <Compile Include="ContentBuilder\ContentModuleDepatment.cs" />
+    <Compile Include="ContentBuilder\ContentModuleDevice.cs" />
+    <Compile Include="ContentBuilder\ContentModuleDocumentHierarchy.cs" />
+    <Compile Include="ContentBuilder\ContentModuleDocuments.cs" />
+    <Compile Include="ContentBuilder\ContentModuleAccount.cs" />
+    <Compile Include="ContentBuilder\ContentModuleAgent.cs" />
+    <Compile Include="ContentBuilder\ContentModuleAnalitic.cs" />
+    <Compile Include="ContentBuilder\ContentModuleChainKind.cs" />
+    <Compile Include="ContentBuilder\ContentModuleEntityDocument.cs" />
+    <Compile Include="ContentBuilder\ContentModuleEquipment.cs" />
+    <Compile Include="ContentBuilder\ContentModuleEquipmentDetail.cs" />
+    <Compile Include="ContentBuilder\ContentModuleEquipmentNode.cs" />
+    <Compile Include="ContentBuilder\ContentModuleEvent.cs" />
+    <Compile Include="ContentBuilder\ContentModuleFactName.cs" />
+    <Compile Include="ContentBuilder\ContentModuleFileData.cs" />
+    <Compile Include="ContentBuilder\ContentModuleKnowledge.cs" />
+    <Compile Include="ContentBuilder\ContentModuleLibrary.cs" />
+    <Compile Include="ContentBuilder\ContentModuleMessage.cs" />
+    <Compile Include="ContentBuilder\ContentModuleNote.cs" />
+    <Compile Include="ContentBuilder\ContentModulePriceName.cs" />
+    <Compile Include="ContentBuilder\ContentModuleProcedureMap.cs" />
+    <Compile Include="ContentBuilder\ContentModuleRate.cs" />
+    <Compile Include="ContentBuilder\ContentModuleRecipe.cs" />
+    <Compile Include="ContentBuilder\ContentModuleResourceImage.cs" />
+    <Compile Include="ContentBuilder\ContentModuleResourceString.cs" />
+    <Compile Include="ContentBuilder\ContentModuleRight.cs" />
+    <Compile Include="ContentBuilder\ContentModuleRouteMember.cs" />
+    <Compile Include="ContentBuilder\ContentModuleRuleset.cs" />
+    <Compile Include="ContentBuilder\ContentModuleStorageCell.cs" />
+    <Compile Include="ContentBuilder\ContentModuleTask.cs" />
+    <Compile Include="ContentBuilder\ContentModuleTimePeriod.cs" />
+    <Compile Include="ContentBuilder\ContentModuleUid.cs" />
+    <Compile Include="ContentBuilder\ContentModuleReportServer.cs" />
+    <Compile Include="ContentBuilder\ContentModuleUserAccount.cs" />
+    <Compile Include="ContentBuilder\ContentModuleWebService.cs" />
+    <Compile Include="ContentBuilder\ContentModuleXMLStorage.cs" />
+    <Compile Include="ContentBuilder\ReportsContentModule.cs" />
+    <Compile Include="ContentBuilder\ReportsPrintContentModule.cs" />
+    <Compile Include="ContentBuilder\ReportsWebContentModule.cs" />
+    <Compile Include="Controls\ControlAgentAdress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlAgentAdress.Designer.cs">
+      <DependentUpon>ControlAgentAdress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlAgentBank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlAgentBank.Designer.cs">
+      <DependentUpon>ControlAgentBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlAgentCodes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlAgentCodes.Designer.cs">
+      <DependentUpon>ControlAgentCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlAgentContact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlAgentContact.Designer.cs">
+      <DependentUpon>ControlAgentContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlAgentDrivingLicence.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlAgentDrivingLicence.Designer.cs">
+      <DependentUpon>ControlAgentDrivingLicence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlAgentPassport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlAgentPassport.Designer.cs">
+      <DependentUpon>ControlAgentPassport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlAgentStructure.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlAgentStructure.Designer.cs">
+      <DependentUpon>ControlAgentStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlAutonum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlAutonum.Designer.cs">
+      <DependentUpon>ControlAutonum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlBase.Designer.cs">
+      <DependentUpon>ControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlCalendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlCalendar.Designer.cs">
+      <DependentUpon>ControlCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlChainKindContentType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlChainKindContentType.Designer.cs">
+      <DependentUpon>ControlChainKindContentType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlCodeName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlCodeName.Designer.cs">
+      <DependentUpon>ControlCodeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlCodeValue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlCodeValue.Designer.cs">
+      <DependentUpon>ControlCodeValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlDataCatalog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDataCatalog.Designer.cs">
+      <DependentUpon>ControlDataCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlDateRegion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDateRegion.Designer.cs">
+      <DependentUpon>ControlDateRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlDepatment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDepatment.Designer.cs">
+      <DependentUpon>ControlDepatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlDevice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDevice.Designer.cs">
+      <DependentUpon>ControlDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentKind.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentKind.Designer.cs">
+      <DependentUpon>ControlDocumentKind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentModuleSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentModuleSetting.Designer.cs">
+      <DependentUpon>ControlDocumentModuleSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentSearchByAnalitic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentSearchByAnalitic.Designer.cs">
+      <DependentUpon>ControlDocumentSearchByAnalitic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentSecure.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentSecure.Designer.cs">
+      <DependentUpon>ControlDocumentSecure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentSign.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentSign.Designer.cs">
+      <DependentUpon>ControlDocumentSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlEquipment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlEquipment.Designer.cs">
+      <DependentUpon>ControlEquipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlEquipmentDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlEquipmentDetail.Designer.cs">
+      <DependentUpon>ControlEquipmentDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlEquipmentNode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlEquipmentNode.Designer.cs">
+      <DependentUpon>ControlEquipmentNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlEvent.Designer.cs">
+      <DependentUpon>ControlEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlFactName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlFactName.Designer.cs">
+      <DependentUpon>ControlFactName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlFactValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlFactValues.Designer.cs">
+      <DependentUpon>ControlFactValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlGeoLocation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlGeoLocation.Designer.cs">
+      <DependentUpon>ControlGeoLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlCustomPeriod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlCustomPeriod.Designer.cs">
+      <DependentUpon>ControlCustomPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlFactColumn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlFactColumn.Designer.cs">
+      <DependentUpon>ControlFactColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlFactPropertyValue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlFactPropertyValue.Designer.cs">
+      <DependentUpon>ControlFactPropertyValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlChain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlChain.Designer.cs">
+      <DependentUpon>ControlChain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlFileData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlFileData.Designer.cs">
+      <DependentUpon>ControlFileData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlFindDocument.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlFindDocument.Designer.cs">
+      <DependentUpon>ControlFindDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlFindHierarchys.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlFindHierarchys.Designer.cs">
+      <DependentUpon>ControlFindHierarchys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlCountry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlCountry.Designer.cs">
+      <DependentUpon>ControlCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlGridViewOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlGridViewOption.Designer.cs">
+      <DependentUpon>ControlGridViewOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlKnowledge.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlKnowledge.Designer.cs">
+      <DependentUpon>ControlKnowledge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlLibraryParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlLibraryParam.Designer.cs">
+      <DependentUpon>ControlLibraryParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlLibraryParams.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlLibraryParams.Designer.cs">
+      <DependentUpon>ControlLibraryParams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlMessage.Designer.cs">
+      <DependentUpon>ControlMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlModuleAutonum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlModuleAutonum.Designer.cs">
+      <DependentUpon>ControlModuleAutonum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlModuleDashBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlModuleDashBoard.Designer.cs">
+      <DependentUpon>ControlModuleDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlModuleDashBoard3D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlModuleDashBoard3D.Designer.cs">
+      <DependentUpon>ControlModuleDashBoard3D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlModuleDogovor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlModuleDogovor.Designer.cs">
+      <DependentUpon>ControlModuleDogovor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlModuleHierarchyRoot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlModuleHierarchyRoot.Designer.cs">
+      <DependentUpon>ControlModuleHierarchyRoot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlModuleSaleLeave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlModuleSaleLeave.Designer.cs">
+      <DependentUpon>ControlModuleSaleLeave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlModuleSalePrice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlModuleSalePrice.Designer.cs">
+      <DependentUpon>ControlModuleSalePrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlModuleSales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlModuleSales.Designer.cs">
+      <DependentUpon>ControlModuleSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlModuleTerritory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlModuleTerritory.Designer.cs">
+      <DependentUpon>ControlModuleTerritory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlNote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlNote.Designer.cs">
+      <DependentUpon>ControlNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPresenter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlPresenter.Designer.cs">
+      <DependentUpon>ControlPresenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPresenterBookKeep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlPresenterBookKeep.Designer.cs">
+      <DependentUpon>ControlPresenterBookKeep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPresenterDogovor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlPresenterDogovor.Designer.cs">
+      <DependentUpon>ControlPresenterDogovor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPresenterFinance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlPresenterFinance.Designer.cs">
+      <DependentUpon>ControlPresenterFinance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPresenterSales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlPresenterSales.Designer.cs">
+      <DependentUpon>ControlPresenterSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPresenterService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlPresenterService.Designer.cs">
+      <DependentUpon>ControlPresenterService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPresenterStore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlPresenterStore.Designer.cs">
+      <DependentUpon>ControlPresenterStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPriceRegion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlPriceRegion.Designer.cs">
+      <DependentUpon>ControlPriceRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlProduct.Designer.cs">
+      <DependentUpon>ControlProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlResourceImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlResourceImage.Designer.cs">
+      <DependentUpon>ControlResourceImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlResourceString.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlResourceString.Designer.cs">
+      <DependentUpon>ControlResourceString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlRouteMember.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlRouteMember.Designer.cs">
+      <DependentUpon>ControlRouteMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlRuleset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlRuleset.Designer.cs">
+      <DependentUpon>ControlRuleset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlModuleSaleManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlModuleSaleManager.Designer.cs">
+      <DependentUpon>ControlModuleSaleManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlSaleProp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlSaleProp.Designer.cs">
+      <DependentUpon>ControlSaleProp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlSeries.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlSeries.Designer.cs">
+      <DependentUpon>ControlSeries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlStorageCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlStorageCell.Designer.cs">
+      <DependentUpon>ControlStorageCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlTableColumn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlTableColumn.Designer.cs">
+      <DependentUpon>ControlTableColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlTableInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlTableInfo.Designer.cs">
+      <DependentUpon>ControlTableInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlTask.Designer.cs">
+      <DependentUpon>ControlTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlTerritory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlTerritory.Designer.cs">
+      <DependentUpon>ControlTerritory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlTimePeriod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlTimePeriod.Designer.cs">
+      <DependentUpon>ControlTimePeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlTimePeriodValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlTimePeriodValues.Designer.cs">
+      <DependentUpon>ControlTimePeriodValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlTown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlTown.Designer.cs">
+      <DependentUpon>ControlTown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlTreeListProp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlTreeListProp.Designer.cs">
+      <DependentUpon>ControlTreeListProp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlUnit.Designer.cs">
+      <DependentUpon>ControlUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlUser.Designer.cs">
+      <DependentUpon>ControlUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlUserAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlUserAccount.Designer.cs">
+      <DependentUpon>ControlUserAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlUserRightElement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlUserRightElement.Designer.cs">
+      <DependentUpon>ControlUserRightElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlSystemParameterUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlSystemParameterUser.Designer.cs">
+      <DependentUpon>ControlSystemParameterUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlDocument.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDocument.Designer.cs">
+      <DependentUpon>ControlDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlWebService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlWebService.Designer.cs">
+      <DependentUpon>ControlWebService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlXmlStorage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlXmlStorage.Designer.cs">
+      <DependentUpon>ControlXmlStorage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GridTimeSpanEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchLookUpEditB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtentionSystem\ExtentionFlagValue.cs" />
+    <Compile Include="ExtentionSystem\ExtentionResourceImage.cs" />
+    <Compile Include="ExtentionValidation\ExtentionValidation.cs" />
+    <Compile Include="ExtentionValidation\ExtentionValidationShowErrors.cs" />
+    <Compile Include="Extention\ExtenionUserAccount.cs" />
+    <Compile Include="Extention\ExtentionAgentAddress.cs" />
+    <Compile Include="Extention\ExtentionAgentBankAccount.cs" />
+    <Compile Include="Extention\ExtentionAgentDrivingLicence.cs" />
+    <Compile Include="Extention\ExtentionAgentPassport.cs" />
+    <Compile Include="Extention\ExtentionAutonum.cs" />
+    <Compile Include="Extention\ExtentionCalendar.cs" />
+    <Compile Include="Extention\ExtentionCodeNames.cs" />
+    <Compile Include="Extention\ExtentionDataCatalog.cs" />
+    <Compile Include="Extention\ExtentionDateRegion.cs" />
+    <Compile Include="Extention\ExtentionDepatment.cs" />
+    <Compile Include="Extention\ExtentionDevice.cs" />
+    <Compile Include="Extention\ExtentionDocument.cs" />
+    <Compile Include="Extention\ExtentionDocumentSign.cs" />
+    <Compile Include="Extention\ExtentionEntityProcedureMap.cs" />
+    <Compile Include="Extention\ExtentionChain.cs" />
+    <Compile Include="Extention\ExtentionEquipment.cs" />
+    <Compile Include="Extention\ExtentionEquipmentDetail.cs" />
+    <Compile Include="Extention\ExtentionEquipmentNode.cs" />
+    <Compile Include="Extention\ExtentionEvent.cs" />
+    <Compile Include="Extention\ExtentionFileData.cs" />
+    <Compile Include="Extention\ExtentionFlagString.cs" />
+    <Compile Include="Extention\ExtentionForms.cs" />
+    <Compile Include="Extention\ExtentionKnowledge.cs" />
+    <Compile Include="Extention\ExtentionLibraryParam.cs" />
+    <Compile Include="Extention\ExtentionMessages.cs" />
+    <Compile Include="Extention\ExtentionNote.cs" />
+    <Compile Include="Extention\ExtentionPriceRegion.cs" />
+    <Compile Include="Extention\ExtentionReportServer.cs" />
+    <Compile Include="Extention\ExtentionRouteMember.cs" />
+    <Compile Include="Extention\ExtentionRuleset.cs" />
+    <Compile Include="Extention\ExtentionStorageCell.cs" />
+    <Compile Include="Extention\ExtentionTableInfo.cs" />
+    <Compile Include="Extention\ExtentionTask.cs" />
+    <Compile Include="Extention\ExtentionTerritory.cs" />
+    <Compile Include="Extention\ExtentionTimePeriod.cs" />
+    <Compile Include="Extention\ExtentionWebService.cs" />
+    <Compile Include="Extention\ExtentionXmlStorage.cs" />
+    <Compile Include="Forms\FormCustomLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCustomLayout.Designer.cs">
+      <DependentUpon>FormCustomLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCustomLayoutOld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCustomLayoutOld.Designer.cs">
+      <DependentUpon>FormCustomLayoutOld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormFlagString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormFlagString.Designer.cs">
+      <DependentUpon>FormFlagString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGridViewOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGridViewOption.Designer.cs">
+      <DependentUpon>FormGridViewOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormWebViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormWebViewer.Designer.cs">
+      <DependentUpon>FormWebViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IWorkareaForm.cs" />
+    <Compile Include="Forms\WwwBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Global\AnalizeModuleUsed.cs" />
+    <Compile Include="Global\BrowseTreeList.cs" />
+    <Compile Include="Global\ContentModuleBase.cs" />
+    <Compile Include="ContentBuilder\ContentModuleBranche.cs" />
+    <Compile Include="ContentBuilder\ContentModuleCurrency.cs" />
+    <Compile Include="ContentBuilder\ContentModuleCustomViewList.cs" />
+    <Compile Include="ContentBuilder\ContentModuleEntityType.cs" />
+    <Compile Include="ContentBuilder\ContentModuleFolder.cs" />
+    <Compile Include="ContentBuilder\ContentModuleSystemParameter.cs" />
+    <Compile Include="ContentBuilder\ContentModuleUnit.cs" />
+    <Compile Include="Global\ContentModuleCore.cs" />
+    <Compile Include="Global\ContentNavigator.cs" />
+    <Compile Include="Controls\ControlEntityMethod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlEntityMethod.Designer.cs">
+      <DependentUpon>ControlEntityMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlSystemParameter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlSystemParameter.Designer.cs">
+      <DependentUpon>ControlSystemParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlTreeList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlTreeList.Designer.cs">
+      <DependentUpon>ControlTreeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlColumn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlColumn.Designer.cs">
+      <DependentUpon>ControlColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlProductUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlProductUnit.Designer.cs">
+      <DependentUpon>ControlProductUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormChoiceAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormChoiceAction.Designer.cs">
+      <DependentUpon>FormChoiceAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDataBaseExeption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDataBaseExeption.Designer.cs">
+      <DependentUpon>FormDataBaseExeption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\DataGridViewHelper.cs" />
+    <Compile Include="Global\FilePreviewThread.cs" />
+    <Compile Include="Global\ObjectGroupAction.cs" />
+    <Compile Include="Global\RibbonFormViewSetting.cs" />
+    <Compile Include="Global\ListBrowserCore.cs" />
+    <Compile Include="Global\ListTreeBrowser.cs" />
+    <Compile Include="Global\TreeBrowser.cs" />
+    <Compile Include="Controls\ControlAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlAccount.Designer.cs">
+      <DependentUpon>ControlAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlAgent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlAgent.Designer.cs">
+      <DependentUpon>ControlAgent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlBankAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlBankAccount.Designer.cs">
+      <DependentUpon>ControlBankAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlBranche.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlBranche.Designer.cs">
+      <DependentUpon>ControlBranche.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlChainKind.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlChainKind.Designer.cs">
+      <DependentUpon>ControlChainKind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlCommon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlCommon.Designer.cs">
+      <DependentUpon>ControlCommon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlCurrencyRate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlCurrencyRate.Designer.cs">
+      <DependentUpon>ControlCurrencyRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlCustomList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlCustomList.Designer.cs">
+      <DependentUpon>ControlCustomList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlEntity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlEntity.Designer.cs">
+      <DependentUpon>ControlEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlFolder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlFolder.Designer.cs">
+      <DependentUpon>ControlFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlHierarchy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlHierarchy.Designer.cs">
+      <DependentUpon>ControlHierarchy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlId.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlId.Designer.cs">
+      <DependentUpon>ControlId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlLibrary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlLibrary.Designer.cs">
+      <DependentUpon>ControlLibrary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlLogin.Designer.cs">
+      <DependentUpon>ControlLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPriceName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlPriceName.Designer.cs">
+      <DependentUpon>ControlPriceName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlSqlServerConnection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlSqlServerConnection.Designer.cs">
+      <DependentUpon>ControlSqlServerConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlState.Designer.cs">
+      <DependentUpon>ControlState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlTree.Designer.cs">
+      <DependentUpon>ControlTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extention\ExtentionAccount.cs" />
+    <Compile Include="Extention\ExtentionAgent.cs" />
+    <Compile Include="Extention\ExtentionAnalitic.cs" />
+    <Compile Include="Extention\ExtentionBranche.cs" />
+    <Compile Include="Extention\ExtentionCurrency.cs" />
+    <Compile Include="Extention\ExtentionCustomViewColumn.cs" />
+    <Compile Include="Extention\ExtentionCustomViewList.cs" />
+    <Compile Include="ExtentionSystem\ExtentionEntity.cs" />
+    <Compile Include="ExtentionSystem\ExtentionEntityKind.cs" />
+    <Compile Include="ExtentionSystem\ExtentionDocumentKind.cs" />
+    <Compile Include="ExtentionSystem\ExtentionDocumentMethod.cs" />
+    <Compile Include="ExtentionSystem\ExtentionDocumentType.cs" />
+    <Compile Include="ExtentionSystem\ExtentionEntityProperty.cs" />
+    <Compile Include="ExtentionSystem\ExtentionEntityPropertyGroup.cs" />
+    <Compile Include="ExtentionSystem\ExtentionEntityPropertyName.cs" />
+    <Compile Include="Extention\ExtentionFactName.cs" />
+    <Compile Include="Extention\ExtentionFolder.cs" />
+    <Compile Include="Extention\ExtentionHierarchy.cs" />
+    <Compile Include="Extention\ExtentionLibrary.cs" />
+    <Compile Include="Extention\ExtentionChainKind.cs" />
+    <Compile Include="Extention\ExtentionPriceName.cs" />
+    <Compile Include="Extention\ExtentionPriceValue.cs" />
+    <Compile Include="Extention\ExtentionProductRecipe.cs" />
+    <Compile Include="Extention\ExtentionProductUnit.cs" />
+    <Compile Include="Extention\ExtentionRate.cs" />
+    <Compile Include="Extention\ExtentionRecipe.cs" />
+    <Compile Include="Extention\ExtentionRegion.cs" />
+    <Compile Include="ExtentionSystem\ExtentionResourceString.cs" />
+    <Compile Include="ExtentionSystem\ExtentionRight.cs" />
+    <Compile Include="Extention\ExtentionState.cs" />
+    <Compile Include="Extention\ExtentionUnit.cs" />
+    <Compile Include="Extention\ExtentionUser.cs" />
+    <Compile Include="Extention\ExtentionContact.cs" />
+    <Compile Include="Extention\ExtentionPeriod.cs" />
+    <Compile Include="Extention\ExtentionSystemParameter.cs" />
+    <Compile Include="Global\BasePropertyControlBase.cs" />
+    <Compile Include="Global\BasePropertyControlCore.cs" />
+    <Compile Include="Global\InternalShowMessages.cs" />
+    <Compile Include="ContentBuilder\ContentModuleProduct.cs" />
+    <Compile Include="Global\UIHelper.cs" />
+    <Compile Include="PrintSystem\PrintService.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyBuilder\BuildControlAgentAddress.cs" />
+    <Compile Include="PropertyBuilder\BuildControlAgentDrivingLicence.cs" />
+    <Compile Include="PropertyBuilder\BuildControlAccount.cs" />
+    <Compile Include="PropertyBuilder\BuildControlAgent.cs" />
+    <Compile Include="PropertyBuilder\BuildControlAgentBankAccount.cs" />
+    <Compile Include="PropertyBuilder\BuildControlAgentPassport.cs" />
+    <Compile Include="PropertyBuilder\BuildControlAnalitic.cs" />
+    <Compile Include="PropertyBuilder\BuildControlAutonum.cs" />
+    <Compile Include="PropertyBuilder\BuildControlBranche.cs" />
+    <Compile Include="PropertyBuilder\BuildControlCalendar.cs" />
+    <Compile Include="PropertyBuilder\BuildControlChain.cs" />
+    <Compile Include="PropertyBuilder\BuildControlChainKind.cs" />
+    <Compile Include="PropertyBuilder\BuildControlCodeName.cs" />
+    <Compile Include="PropertyBuilder\BuildControlCodeValue.cs" />
+    <Compile Include="PropertyBuilder\BuildControlColumn.cs" />
+    <Compile Include="PropertyBuilder\BuildControlColumnInfo.cs" />
+    <Compile Include="PropertyBuilder\BuildControlCommon.cs" />
+    <Compile Include="PropertyBuilder\BuildControlContact.cs" />
+    <Compile Include="PropertyBuilder\BuildControlCountry.cs" />
+    <Compile Include="PropertyBuilder\BuildControlCurrency.cs" />
+    <Compile Include="PropertyBuilder\BuildControlCustomViewList.cs" />
+    <Compile Include="PropertyBuilder\BuildControlDataCatalog.cs" />
+    <Compile Include="PropertyBuilder\BuildControlDateRegion.cs" />
+    <Compile Include="PropertyBuilder\BuildControlDepatment.cs" />
+    <Compile Include="PropertyBuilder\BuildControlDevice.cs" />
+    <Compile Include="PropertyBuilder\BuildControlDocument.cs" />
+    <Compile Include="PropertyBuilder\BuildControlDocumentCodes.cs" />
+    <Compile Include="PropertyBuilder\BuildControlDocumentKnowledge.cs" />
+    <Compile Include="PropertyBuilder\BuildControlDocumentSign.cs" />
+    <Compile Include="PropertyBuilder\BuildControlEntityDocument.cs" />
+    <Compile Include="PropertyBuilder\BuildControlEntityDocumentKind.cs" />
+    <Compile Include="PropertyBuilder\BuildControlEntityKind.cs" />
+    <Compile Include="PropertyBuilder\BuildControlEntityType.cs" />
+    <Compile Include="PropertyBuilder\BuildControlEquipment.cs" />
+    <Compile Include="PropertyBuilder\BuildControlEquipmentDetail.cs" />
+    <Compile Include="PropertyBuilder\BuildControlEquipmentNode.cs" />
+    <Compile Include="PropertyBuilder\BuildControlEvent.cs" />
+    <Compile Include="PropertyBuilder\BuildControlFactColumn.cs" />
+    <Compile Include="PropertyBuilder\BuildControlFactName.cs" />
+    <Compile Include="PropertyBuilder\BuildControlFactValue.cs" />
+    <Compile Include="PropertyBuilder\BuildControlFactValues.cs" />
+    <Compile Include="PropertyBuilder\BuildControlFileData.cs" />
+    <Compile Include="PropertyBuilder\BuildControlFlagValue.cs" />
+    <Compile Include="PropertyBuilder\BuildControlFolder.cs" />
+    <Compile Include="PropertyBuilder\BuildControlHierarchy.cs" />
+    <Compile Include="PropertyBuilder\BuildControlKnowledge.cs" />
+    <Compile Include="PropertyBuilder\BuildControlLibrary.cs" />
+    <Compile Include="PropertyBuilder\BuildControlMessage.cs" />
+    <Compile Include="PropertyBuilder\BuildControlNote.cs" />
+    <Compile Include="PropertyBuilder\BuildControlPriceName.cs" />
+    <Compile Include="PropertyBuilder\BuildControlPriceRegion.cs" />
+    <Compile Include="PropertyBuilder\BuildControlProcedureMap.cs" />
+    <Compile Include="PropertyBuilder\BuildControlProduct.cs" />
+    <Compile Include="Extention\ExtentionProduct.cs" />
+    <Compile Include="Extention\ShowLogin.cs" />
+    <Compile Include="Global\ExtentionBrowseListType.cs" />
+    <Compile Include="PropertyBuilder\BuildControlProductUnit.cs" />
+    <Compile Include="PropertyBuilder\BuildControlRate.cs" />
+    <Compile Include="PropertyBuilder\BuildControlRecipe.cs" />
+    <Compile Include="PropertyBuilder\BuildControlRegion.cs" />
+    <Compile Include="PropertyBuilder\BuildControlResourceImage.cs" />
+    <Compile Include="PropertyBuilder\BuildControlResourceString.cs" />
+    <Compile Include="PropertyBuilder\BuildControlRight.cs" />
+    <Compile Include="PropertyBuilder\BuildControlRouteMember.cs" />
+    <Compile Include="PropertyBuilder\BuildControlRuleset.cs" />
+    <Compile Include="PropertyBuilder\BuildControlSeries.cs" />
+    <Compile Include="PropertyBuilder\BuildControlStorageCell.cs" />
+    <Compile Include="PropertyBuilder\BuildControlSystemParameter.cs" />
+    <Compile Include="PropertyBuilder\BuildControlTableInfo.cs" />
+    <Compile Include="PropertyBuilder\BuildControlTask.cs" />
+    <Compile Include="PropertyBuilder\BuildControlTerritory.cs" />
+    <Compile Include="PropertyBuilder\BuildControlTimePeriod.cs" />
+    <Compile Include="PropertyBuilder\BuildControlTown.cs" />
+    <Compile Include="PropertyBuilder\BuildControlUnit.cs" />
+    <Compile Include="Forms\FormDataBaseConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDataBaseConnection.Designer.cs">
+      <DependentUpon>FormDataBaseConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDataBaseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDataBaseList.Designer.cs">
+      <DependentUpon>FormDataBaseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProperties.Designer.cs">
+      <DependentUpon>FormProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\ListBrowserBaseObjects.cs" />
+    <Compile Include="Controls\ControlList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlList.Designer.cs">
+      <DependentUpon>ControlList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\InternalShowPropertyBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls\ControlFlagValue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlFlagValue.Designer.cs">
+      <DependentUpon>ControlFlagValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyBuilder\BuildControlState.cs" />
+    <Compile Include="PropertyBuilder\BuildControlUser.cs" />
+    <Compile Include="PropertyBuilder\BuildControlUserAccount.cs" />
+    <Compile Include="PropertyBuilder\BuildControlUserRightCommon.cs" />
+    <Compile Include="PropertyBuilder\BuildControlUserRightElement.cs" />
+    <Compile Include="PropertyBuilder\BuildControlWebService.cs" />
+    <Compile Include="PropertyBuilder\BuildControlXmlStorage.cs" />
+    <Compile Include="Wizard\FormHierarchyWizardCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\FormHierarchyWizardCreate.Designer.cs">
+      <DependentUpon>FormHierarchyWizardCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\FormWizardBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\FormWizardBank.Designer.cs">
+      <DependentUpon>FormWizardBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\FormWizardBankAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\FormWizardBankAccount.Designer.cs">
+      <DependentUpon>FormWizardBankAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\FormWizardCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\FormWizardCompany.Designer.cs">
+      <DependentUpon>FormWizardCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\FormWizardProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\FormWizardProduct.Designer.cs">
+      <DependentUpon>FormWizardProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\FormWizardStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\FormWizardStore.Designer.cs">
+      <DependentUpon>FormWizardStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\FormWizardWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\FormWizardWorker.Designer.cs">
+      <DependentUpon>FormWizardWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workflows\ActivityAgentChangeCompanyOwner.cs" />
+    <Compile Include="Workflows\ActivityAnaliticChangeCompanyOwner.cs" />
+    <Compile Include="Workflows\ActivityBrancheAddLinkedServer.cs" />
+    <Compile Include="Workflows\ActivityBrowseMyCompanies.cs" />
+    <Compile Include="Workflows\ActivityChangeCompanyOwner.cs" />
+    <Compile Include="Workflows\ActivityChangeDbOwner.cs" />
+    <Compile Include="Workflows\ActivityExchangeSendBrancheToDatabase.cs" />
+    <Compile Include="Workflows\ActivityExchangeSendTaskToDatabase.cs" />
+    <Compile Include="Workflows\ActivityFastCreateNote.cs" />
+    <Compile Include="Workflows\ActivityKnoweledgeMoveDatabase.cs" />
+    <Compile Include="Workflows\ActivityKnowledgeChangeCompanyOwner.cs" />
+    <Compile Include="Workflows\ActivityPrintArrayDocument.cs" />
+    <Compile Include="Workflows\ActivityPrintDocument.cs" />
+    <Compile Include="Workflows\ActivityProductChangeCompanyOwner.cs" />
+    <Compile Include="Workflows\ActivitySaveArrayDocument.cs" />
+    <Compile Include="Workflows\ActivitySaveDocument.cs" />
+    <Compile Include="Workflows\ActivityShowAnaliticUsage.cs" />
+    <Compile Include="Workflows\ActivityShowDocumentCodes.cs" />
+    <Compile Include="Workflows\ActivityShowProperty.cs" />
+    <Compile Include="Workflows\ActivityTaskSetDone.cs" />
+    <Compile Include="Workflows\WFCore.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\ControlAgentAdress.resx">
+      <DependentUpon>ControlAgentAdress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlAgentBank.resx">
+      <DependentUpon>ControlAgentBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlAgentCodes.resx">
+      <DependentUpon>ControlAgentCodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlAgentContact.resx">
+      <DependentUpon>ControlAgentContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlAgentDrivingLicence.resx">
+      <DependentUpon>ControlAgentDrivingLicence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlAgentPassport.resx">
+      <DependentUpon>ControlAgentPassport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlAgentStructure.resx">
+      <DependentUpon>ControlAgentStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlAutonum.resx">
+      <DependentUpon>ControlAutonum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlBase.resx">
+      <DependentUpon>ControlBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlCalendar.resx">
+      <DependentUpon>ControlCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlChain.resx">
+      <DependentUpon>ControlChain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlChainKindContentType.resx">
+      <DependentUpon>ControlChainKindContentType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlCodeName.resx">
+      <DependentUpon>ControlCodeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlCodeValue.resx">
+      <DependentUpon>ControlCodeValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlDataCatalog.resx">
+      <DependentUpon>ControlDataCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlDateRegion.resx">
+      <DependentUpon>ControlDateRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlDepatment.resx">
+      <DependentUpon>ControlDepatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlDocumentKind.resx">
+      <DependentUpon>ControlDocumentKind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlDocumentModuleSetting.resx">
+      <DependentUpon>ControlDocumentModuleSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlDocumentSearchByAnalitic.resx">
+      <DependentUpon>ControlDocumentSearchByAnalitic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlDocumentSecure.resx">
+      <DependentUpon>ControlDocumentSecure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlDocumentSign.resx">
+      <DependentUpon>ControlDocumentSign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlEquipmentDetail.resx">
+      <DependentUpon>ControlEquipmentDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlEquipmentNode.resx">
+      <DependentUpon>ControlEquipmentNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlEvent.resx">
+      <DependentUpon>ControlEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlFactName.resx">
+      <DependentUpon>ControlFactName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlFactValues.resx">
+      <DependentUpon>ControlFactValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlGeoLocation.resx">
+      <DependentUpon>ControlGeoLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlCustomPeriod.resx">
+      <DependentUpon>ControlCustomPeriod.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlEntityMethod.resx">
+      <DependentUpon>ControlEntityMethod.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlFactColumn.resx">
+      <DependentUpon>ControlFactColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlFactPropertyValue.resx">
+      <DependentUpon>ControlFactPropertyValue.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlFileData.resx">
+      <DependentUpon>ControlFileData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlFindDocument.resx">
+      <DependentUpon>ControlFindDocument.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlFindHierarchys.resx">
+      <DependentUpon>ControlFindHierarchys.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlCountry.resx">
+      <DependentUpon>ControlCountry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlGridViewOption.resx">
+      <DependentUpon>ControlGridViewOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlKnowledge.resx">
+      <DependentUpon>ControlKnowledge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlLibraryParam.resx">
+      <DependentUpon>ControlLibraryParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlLibraryParams.resx">
+      <DependentUpon>ControlLibraryParams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlMessage.resx">
+      <DependentUpon>ControlMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlModuleAutonum.resx">
+      <DependentUpon>ControlModuleAutonum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlModuleDashBoard.resx">
+      <DependentUpon>ControlModuleDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlModuleDashBoard3D.resx">
+      <DependentUpon>ControlModuleDashBoard3D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlModuleDogovor.resx">
+      <DependentUpon>ControlModuleDogovor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlModuleHierarchyRoot.resx">
+      <DependentUpon>ControlModuleHierarchyRoot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlModuleSaleLeave.resx">
+      <DependentUpon>ControlModuleSaleLeave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlModuleSalePrice.resx">
+      <DependentUpon>ControlModuleSalePrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlModuleSales.resx">
+      <DependentUpon>ControlModuleSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlModuleTerritory.resx">
+      <DependentUpon>ControlModuleTerritory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlNote.resx">
+      <DependentUpon>ControlNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlPresenter.resx">
+      <DependentUpon>ControlPresenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlPresenterBookKeep.resx">
+      <DependentUpon>ControlPresenterBookKeep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlPresenterDogovor.resx">
+      <DependentUpon>ControlPresenterDogovor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlPresenterFinance.resx">
+      <DependentUpon>ControlPresenterFinance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlPresenterSales.resx">
+      <DependentUpon>ControlPresenterSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlPresenterService.resx">
+      <DependentUpon>ControlPresenterService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlPresenterStore.resx">
+      <DependentUpon>ControlPresenterStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlPriceRegion.resx">
+      <DependentUpon>ControlPriceRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlProduct.resx">
+      <DependentUpon>ControlProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlResourceImage.resx">
+      <DependentUpon>ControlResourceImage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlResourceString.resx">
+      <DependentUpon>ControlResourceString.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlRuleset.resx">
+      <DependentUpon>ControlRuleset.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlModuleSaleManager.resx">
+      <DependentUpon>ControlModuleSaleManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlSaleProp.resx">
+      <DependentUpon>ControlSaleProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlSeries.resx">
+      <DependentUpon>ControlSeries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlStorageCell.resx">
+      <DependentUpon>ControlStorageCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlSystemParameter.resx">
+      <DependentUpon>ControlSystemParameter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlTableColumn.resx">
+      <DependentUpon>ControlTableColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlTableInfo.resx">
+      <DependentUpon>ControlTableInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlTask.resx">
+      <DependentUpon>ControlTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlTerritory.resx">
+      <DependentUpon>ControlTerritory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlTimePeriod.resx">
+      <DependentUpon>ControlTimePeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlTimePeriodValues.resx">
+      <DependentUpon>ControlTimePeriodValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlTown.resx">
+      <DependentUpon>ControlTown.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlTreeList.resx">
+      <DependentUpon>ControlTreeList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlTreeListProp.resx">
+      <DependentUpon>ControlTreeListProp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlUnit.resx">
+      <DependentUpon>ControlUnit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlUser.resx">
+      <DependentUpon>ControlUser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlColumn.resx">
+      <DependentUpon>ControlColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlAccount.resx">
+      <DependentUpon>ControlAccount.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlAgent.resx">
+      <DependentUpon>ControlAgent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlBankAccount.resx">
+      <DependentUpon>ControlBankAccount.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlBranche.resx">
+      <DependentUpon>ControlBranche.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlChainKind.resx">
+      <DependentUpon>ControlChainKind.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlCommon.resx">
+      <DependentUpon>ControlCommon.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlCurrencyRate.resx">
+      <DependentUpon>ControlCurrencyRate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlCustomList.resx">
+      <DependentUpon>ControlCustomList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlEntity.resx">
+      <DependentUpon>ControlEntity.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlFolder.resx">
+      <DependentUpon>ControlFolder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlHierarchy.resx">
+      <DependentUpon>ControlHierarchy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlId.resx">
+      <DependentUpon>ControlId.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlLibrary.resx">
+      <DependentUpon>ControlLibrary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlList.resx">
+      <DependentUpon>ControlList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlLogin.resx">
+      <DependentUpon>ControlLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlPriceName.resx">
+      <DependentUpon>ControlPriceName.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlProductUnit.resx">
+      <DependentUpon>ControlProductUnit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlSqlServerConnection.resx">
+      <DependentUpon>ControlSqlServerConnection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlState.resx">
+      <DependentUpon>ControlState.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlTree.resx">
+      <DependentUpon>ControlTree.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlUserAccount.resx">
+      <DependentUpon>ControlUserAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlUserRightElement.resx">
+      <DependentUpon>ControlUserRightElement.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlSystemParameterUser.resx">
+      <DependentUpon>ControlSystemParameterUser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlDocument.resx">
+      <DependentUpon>ControlDocument.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlWebService.resx">
+      <DependentUpon>ControlWebService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlXmlStorage.resx">
+      <DependentUpon>ControlXmlStorage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCustomLayout.resx">
+      <DependentUpon>FormCustomLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormChoiceAction.resx">
+      <DependentUpon>FormChoiceAction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCustomLayoutOld.resx">
+      <DependentUpon>FormCustomLayoutOld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDataBaseExeption.resx">
+      <DependentUpon>FormDataBaseExeption.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDataBaseConnection.resx">
+      <DependentUpon>FormDataBaseConnection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDataBaseList.resx">
+      <DependentUpon>FormDataBaseList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormFlagString.resx">
+      <DependentUpon>FormFlagString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGridViewOption.resx">
+      <DependentUpon>FormGridViewOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormProperties.resx">
+      <DependentUpon>FormProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlFlagValue.resx">
+      <DependentUpon>ControlFlagValue.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormWebViewer.resx">
+      <DependentUpon>FormWebViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\FormHierarchyWizardCreate.resx">
+      <DependentUpon>FormHierarchyWizardCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\FormWizardBank.resx">
+      <DependentUpon>FormWizardBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\FormWizardBankAccount.resx">
+      <DependentUpon>FormWizardBankAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\FormWizardCompany.resx">
+      <DependentUpon>FormWizardCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\FormWizardProduct.resx">
+      <DependentUpon>FormWizardProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\FormWizardStore.resx">
+      <DependentUpon>FormWizardStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\FormWizardWorker.resx">
+      <DependentUpon>FormWizardWorker.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BisinesObjectsCore\BusinessObjectsCore.csproj">
+      <Project>{43F15828-0401-4CC3-BB65-FFF4799B3136}</Project>
+      <Name>BusinessObjectsCore</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessObjects.ReportingService\BusinessObjects.ReportingService.csproj">
+      <Project>{FEE8589E-493C-46C1-A358-88EEFE1BCE1D}</Project>
+      <Name>BusinessObjects.ReportingService</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessObjectsCoreWf\BusinessObjectsCoreWf.csproj">
+      <Project>{AFDF6448-2C49-4EEB-A373-2B6006388D37}</Project>
+      <Name>BusinessObjectsCoreWf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BusinessObjectCore.snk" />
+    <None Include="Resources\NEW16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CREATE32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DATABASE16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documentdone16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EDIT32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FOLDER32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OPEN16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HIERARCHYFIND16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HISTORY16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keys32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CALENDAR16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PERIOD32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preferences32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PREVIEW32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PruceList16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PROPERTIES16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REFRESHGREEN16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REFRESH32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SAVECLOSE32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MANAGEMENTSTUDIO16.png" />
+    <None Include="Resources\MANAGEMENTSTUDIO32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HELP32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KEYS_X32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Workflows\WFActivityChangeCompanyOwners.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Workflows\WFActivitySetKnoweledgeReadOnly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

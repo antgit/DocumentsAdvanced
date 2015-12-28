@@ -1,0 +1,41 @@
+BACKUP DATABASE [Documents2009] TO  DISK = N'E:\SQLDATABASE\Bakup\Documents2010.bak' WITH NOFORMAT, INIT,  NAME = N'DataBaseDocumentSolution2010-Full Database Backup', SKIP, NOREWIND, NOUNLOAD, COMPRESSION,  STATS = 10
+GO
+--RESTORE DATABASE [Documents2011] FROM  DISK = N'E:\SQLDATABASE\Bakup\Documents2011.bak' WITH  FILE = 1,  NOUNLOAD,  REPLACE,  STATS = 10, KEEP_CDC
+--GO
+--SRV-SQL09
+--RESTORE DATABASE [Documents2010] FROM  DISK = N'D:\Bakups\Documents2010.bak' WITH  FILE = 1,  NOUNLOAD,  REPLACE,  STATS = 10, KEEP_CDC
+--GO
+
+BACKUP DATABASE Documents2010
+TO DISK =N'C:\Documents2010.BAK'
+WITH COMPRESSION
+GO
+
+/* Perform a Tail Log Backup of FileStreamDB */
+BACKUP LOG Documents2010
+TO DISK =N'C:\Documents2010.TRN'
+WITH COMPRESSION, NORECOVERY
+GO
+
+Use master
+GO
+RESTORE FILELISTONLY 
+FROM DISK = N'E:\SQLDATABASER2\Backup\Documents2010.bak'
+WITH FILE =1
+GO
+/* Restore Full Backup with MOVE & NORECOVERY */
+RESTORE DATABASE Documents2010
+FROM DISK = N'E:\SQLDATABASER2\Backup\Documents2010.bak'
+WITH 
+MOVE N'PrimaryFileName' TO N'E:\SQLDATABASER2\Documents2010.mdf',  
+MOVE N'HistoryData' TO N'E:\SQLDATABASER2\Documents2010_1.ndf',  
+MOVE N'DocumentData' TO N'E:\SQLDATABASER2\Documents2010_2.ndf',  
+MOVE N'PrimaryLogFileName' TO N'E:\SQLDATABASER2\Documents2010_3.ldf',  
+MOVE N'PrimaryFileStreamFile' TO N'E:\SQLDATABASER2\Documents2010_4.PrimaryFileStreamFile',
+NORECOVERY, FILE =1
+GO
+/* Restore Tail Log Backup with RECOVERY */
+RESTORE DATABASE Documents2010
+FROM DISK = N'E:\SQLDATABASER2\Backup\Documents2010.TRN'
+WITH RECOVERY, FILE =1
+GO 

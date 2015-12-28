@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BusinessObjects.BaseCore&lt;T&gt;">
+    <Position X="7.75" Y="0.75" Width="2.25" />
+    <Members>
+      <Field Name="_baseStruct" Hidden="true" />
+      <Field Name="_code" Hidden="true" />
+      <Field Name="_createdHandlers" Hidden="true" />
+      <Field Name="_creatingHandlers" Hidden="true" />
+      <Field Name="_CustomPropertyValues" Hidden="true" />
+      <Field Name="_deletedHandlers" Hidden="true" />
+      <Field Name="_deletingHandlers" Hidden="true" />
+      <Field Name="_entity" Hidden="true" />
+      <Field Name="_entityId" Hidden="true" />
+      <Field Name="_flagsValue" Hidden="true" />
+      <Field Name="_kindId" Hidden="true" />
+      <Field Name="_kindValue" Hidden="true" />
+      <Field Name="_loadHandlers" Hidden="true" />
+      <Field Name="_loadingHandlers" Hidden="true" />
+      <Field Name="_memo" Hidden="true" />
+      <Field Name="_name" Hidden="true" />
+      <Field Name="_savedHandlers" Hidden="true" />
+      <Field Name="_savingHandlers" Hidden="true" />
+      <Field Name="_state" Hidden="true" />
+      <Field Name="_stateId" Hidden="true" />
+      <Field Name="_templateId" Hidden="true" />
+      <Field Name="_updatedHandlers" Hidden="true" />
+      <Field Name="_updatingHandlers" Hidden="true" />
+      <Field Name="_validatedHandlers" Hidden="true" />
+      <Field Name="_validatingHandlers" Hidden="true" />
+      <Field Name="collCustomPropertyDesctiptor" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>FoRRoKABRCaAAIgNIBNsOqWQFyM0AMZCYEQDFAEhgxg=</HashCode>
+      <FileName>BaseObj\BaseCore.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusinessObjects.BaseCoreObject">
+    <Position X="4.25" Y="0.5" Width="2.25" />
+    <Members>
+      <Field Name="_baseStruct" Hidden="true" />
+      <Field Name="_databaseId" Hidden="true" />
+      <Field Name="_dbSourceId" Hidden="true" />
+      <Field Name="_guid" Hidden="true" />
+      <Field Name="_id" Hidden="true" />
+      <Field Name="_isNew" Hidden="true" />
+      <Field Name="_iWorkarea" Hidden="true" />
+      <Field Name="_objectVersion" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ApQCwAAAAAADAACEIIBEABAAAgAABEICQEAEAAAgABA=</HashCode>
+      <FileName>BaseObj\BaseCoreObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusinessObjects.BasePropertyChangeSupport">
+    <Position X="0.75" Y="0.75" Width="2.25" />
+    <Members>
+      <Field Name="_changedHandlers" Hidden="true" />
+      <Field Name="_isChanged" Hidden="true" />
+      <Field Name="_nonSerializableHandlers" Hidden="true" />
+      <Field Name="_serializableHandlers" Hidden="true" />
+      <Field Name="_serializablePropertyChangingHandlers" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AoAAIAAAAQAAAQAKJCAAIAABgAAEACAAAAAAAAAAAiQ=</HashCode>
+      <FileName>BaseObj\BasePropertyChangeSupport.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="BusinessObjects.ICoreObject">
+    <Position X="1" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgAAAAAAAAAAAIAAAABAAAAAABAAAQAAEAAAAAAA=</HashCode>
+      <FileName>Interfaces\ICoreObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BusinessObjects.IBase">
+    <Position X="3" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAQCIAAAAAAAAgAAQAAAAAAABCAEAABAAAAgA=</HashCode>
+      <FileName>Interfaces\IBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

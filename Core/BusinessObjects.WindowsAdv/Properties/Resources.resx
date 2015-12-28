@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACTION_DELETE" xml:space="preserve">
+    <value>Удалить в корзину|Удалить|Исключить|Запретить использование</value>
+    <comment>Удалить в корзину|Удалить|Исключить|Запретить использование</comment>
+  </data>
+  <data name="ACTION_TYPED_DEL" xml:space="preserve">
+    <value>Удаление</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CREATE_X16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NEW16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CREATE_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CREATE32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DATABASE_X16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DATABASE16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DELETE_X16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DOCUMENTDONE_X16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\documentdone16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EDIT_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EDIT32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EXIT_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exit32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FOLDEROPEN_X16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OPEN16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FOLDER_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FOLDER32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HELP_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HELP32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HIERARCHYFIND_X16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HIERARCHYFIND16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HISTORY_X16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HISTORY16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="INFO_DELETEELEMENT" xml:space="preserve">
+    <value>При удалении в \"Корзину\" возможно полное востановление, а при полном удалении дальнейшее востановление невозможно. Рекомендуется использовать удаление в корзину, использовать полное удаление возможно только при полной уверенности в правильности своих действий.</value>
+  </data>
+  <data name="INFO_VIEW_DETAIL" xml:space="preserve">
+    <value>Просмотреть информацию...</value>
+  </data>
+  <data name="KEYS_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KEYS_X32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KEY_X16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LABEL_COMPANY" xml:space="preserve">
+    <value>Предприятие</value>
+  </data>
+  <data name="LABEL_STORE" xml:space="preserve">
+    <value>Склад</value>
+  </data>
+  <data name="MSG_EX_ACTION" xml:space="preserve">
+    <value>Ошибка выполнения действий!</value>
+  </data>
+  <data name="MSG_EX_DELETE" xml:space="preserve">
+    <value>Ошибка удаления!</value>
+  </data>
+  <data name="MSG_EX_DELETECOLUMN" xml:space="preserve">
+    <value>Колонку нельзя удалить!</value>
+  </data>
+  <data name="MSG_EX_DELETEDBENTITYKIND" xml:space="preserve">
+    <value>Ошибка удаления подтипа!</value>
+  </data>
+  <data name="MSG_EX_DELETEDOCKIND" xml:space="preserve">
+    <value>Ошибка удаления типа документа!</value>
+  </data>
+  <data name="MSG_EX_DELETEFLAG" xml:space="preserve">
+    <value>Ошибка удаления флага!</value>
+  </data>
+  <data name="MSG_EX_DELETEMETHOD" xml:space="preserve">
+    <value>Ошибка удаления метода!</value>
+  </data>
+  <data name="MSG_EX_MOVE_HIERARCYKINDS" xml:space="preserve">
+    <value>Запрещается перемещать разные виды иерархий!</value>
+  </data>
+  <data name="NEW_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PERIOD_X16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CALENDAR16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PERIOD_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PERIOD32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PREFERENCE_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preferences32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PREVIEW_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PREVIEW32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PRICELIST_X16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PruceList16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PRINT_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Print32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PROPERTIES_X16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PROPERTIES16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REFRESH_X16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REFRESHGREEN16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REFRESH_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REFRESH32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SAVECLOSE_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SAVECLOSE32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SAVE_X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SRT_LABEL_PAGE_BANKACC" xml:space="preserve">
+    <value>Расчетные счета</value>
+  </data>
+  <data name="STR_ACCOUNTSALDO" xml:space="preserve">
+    <value>Активный|Пассивный|Пассивно-активный|Забалансовый</value>
+  </data>
+  <data name="STR_ACCOUNTSUBTYPE" xml:space="preserve">
+    <value>Свернутое|Развернутое|Свернутое по корреспондентам|Свернутое по объектам учета</value>
+  </data>
+  <data name="STR_ACL" xml:space="preserve">
+    <value>Разрешения</value>
+  </data>
+  <data name="STR_BTN_CANCEL" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="STR_BTN_OK" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="STR_CHOICE_DEL" xml:space="preserve">
+    <value>Удалить в корзину|Удалить навсегда</value>
+  </data>
+  <data name="STR_CREATENEW" xml:space="preserve">
+    <value>Создать...</value>
+  </data>
+  <data name="STR_DATE" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="STR_DELETE" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="STR_ERR_DBE_FORMAT" xml:space="preserve">
+    <value>Идентификатор: {1}{0}Номер: {2}{0}Уровень:{3}{0}Состояние: {4}{0}Процедура: {5}{0}Сообщение:{6}</value>
+  </data>
+  <data name="STR_FACTS_VALUEPERIOD" xml:space="preserve">
+    <value>Данные за период ({0})</value>
+  </data>
+  <data name="STR_LABEL_ARTICUL" xml:space="preserve">
+    <value>Артикул</value>
+  </data>
+  <data name="STR_LABEL_BARCODE" xml:space="preserve">
+    <value>Штрихкод</value>
+  </data>
+  <data name="STR_LABEL_BRAND" xml:space="preserve">
+    <value>Бренд</value>
+  </data>
+  <data name="STR_LABEL_CATALOGUE" xml:space="preserve">
+    <value>Кат. №</value>
+  </data>
+  <data name="STR_LABEL_CODE" xml:space="preserve">
+    <value>Признак</value>
+  </data>
+  <data name="STR_LABEL_COLUMNS" xml:space="preserve">
+    <value>Колонки</value>
+  </data>
+  <data name="STR_LABEL_FORM" xml:space="preserve">
+    <value>Форма</value>
+  </data>
+  <data name="STR_LABEL_GUID" xml:space="preserve">
+    <value>Гуид</value>
+  </data>
+  <data name="STR_LABEL_ID" xml:space="preserve">
+    <value>Ид</value>
+  </data>
+  <data name="STR_LABEL_MANUFACTURER" xml:space="preserve">
+    <value>Изготовитель</value>
+  </data>
+  <data name="STR_LABEL_MEMO" xml:space="preserve">
+    <value>Примечание</value>
+  </data>
+  <data name="STR_LABEL_NAME" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="STR_LABEL_NOM" xml:space="preserve">
+    <value>Ном №</value>
+  </data>
+  <data name="STR_LABEL_PAGECOMMON" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="STR_LABEL_PAGEFACTS" xml:space="preserve">
+    <value>Факты</value>
+  </data>
+  <data name="STR_LABEL_PAGEHIERARCHY" xml:space="preserve">
+    <value>Группы</value>
+  </data>
+  <data name="STR_LABEL_PAGEID" xml:space="preserve">
+    <value>Свойства</value>
+  </data>
+  <data name="STR_LABEL_PAGEPRODUNITS" xml:space="preserve">
+    <value>Единицы измерения</value>
+  </data>
+  <data name="STR_LABEL_PAGESTATE" xml:space="preserve">
+    <value>Состояния</value>
+  </data>
+  <data name="STR_LABEL_PAGE_LINKS" xml:space="preserve">
+    <value>Связи</value>
+  </data>
+  <data name="STR_LABEL_SIZE" xml:space="preserve">
+    <value>Типоразмер</value>
+  </data>
+  <data name="STR_LABEL_SIZEWHD" xml:space="preserve">
+    <value>Размер (в:ш:г)</value>
+  </data>
+  <data name="STR_LABEL_STORAGEPERIOD" xml:space="preserve">
+    <value>Срок хранения</value>
+  </data>
+  <data name="STR_LABEL_TEMPLATE" xml:space="preserve">
+    <value>Шаблон</value>
+  </data>
+  <data name="STR_LABEL_TRADEMARK" xml:space="preserve">
+    <value>Торговая марка</value>
+  </data>
+  <data name="STR_LABEL_TYPES" xml:space="preserve">
+    <value>Типы</value>
+  </data>
+  <data name="STR_LABEL_UNIT" xml:space="preserve">
+    <value>Ед. измерения</value>
+  </data>
+  <data name="STR_LABEL_WEIGHT" xml:space="preserve">
+    <value>Вес</value>
+  </data>
+  <data name="STR_PRICEKIND" xml:space="preserve">
+    <value>Вид цены</value>
+  </data>
+  <data name="STR_PRICELIST" xml:space="preserve">
+    <value>Прайс-лист</value>
+  </data>
+  <data name="STR_PROPERTIES" xml:space="preserve">
+    <value>Свойства</value>
+  </data>
+  <data name="STR_RIGHTS_EFFECTIVE" xml:space="preserve">
+    <value>{0} - Эффективные разрешения</value>
+  </data>
+  <data name="STR_TRASH" xml:space="preserve">
+    <value>В корзину</value>
+  </data>
+  <data name="STR_TXT_NODATA" xml:space="preserve">
+    <value>&lt;нет данных&gt;</value>
+  </data>
+  <data name="STR_VALUE" xml:space="preserve">
+    <value>Значение</value>
+  </data>
+</root>

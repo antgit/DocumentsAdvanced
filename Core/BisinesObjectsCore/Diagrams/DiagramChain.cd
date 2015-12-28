@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BusinessObjects.ChainKind">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="_code" Hidden="true" />
+      <Field Name="_memo" Hidden="true" />
+      <Field Name="_name" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAAAoIIAAAaAAAAEAAAgAAQAAAEAAAICAAAAAAAggAA=</HashCode>
+      <FileName>BaseObj\ChainKind.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessObjects.Chain&lt;T&gt;">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="_kind" Hidden="true" />
+      <Field Name="_kindId" Hidden="true" />
+      <Field Name="_left" Hidden="true" />
+      <Field Name="_leftId" Hidden="true" />
+      <Field Name="_orderNo" Hidden="true" />
+      <Field Name="_right" Hidden="true" />
+      <Field Name="_rightId" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BAAJiIAAACBAAIAAAAAAAAAEAgFAAQoACACAAAAAAAI=</HashCode>
+      <FileName>BaseObj\Chain.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusinessObjects.ChainAdvanced&lt;T, T2&gt;">
+    <Position X="1.25" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAAJiIAAACBAAIAAAAAAAAAEAgFAAQoACACAAAAAAAI=</HashCode>
+      <FileName>BaseObj\ChainAdvanced.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="BusinessObjects.IChain&lt;T&gt;">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAACBAAAAAAAAAAAAEAAAAAAAACACAAAAAAAI=</HashCode>
+      <FileName>Interfaces\IChain.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BusinessObjects.IChains&lt;T&gt;">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IChain.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BusinessObjects.IChainAdvanced&lt;T, T2&gt;">
+    <Position X="5.75" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAACBAAAAAAAAAAAAEAAAAAAAACACAAAAAAAI=</HashCode>
+      <FileName>Interfaces\IChainAdvanced.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

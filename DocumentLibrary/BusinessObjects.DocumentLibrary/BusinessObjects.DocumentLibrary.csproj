@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF16FECC-2A20-48FB-AB0D-0A7D4BA1FD1A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessObjects.DocumentLibrary</RootNamespace>
+    <AssemblyName>BusinessObjects.DocumentLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Dll\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Dll\Release\</OutputPath>
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\Dll\Release\BusinessObjects.DocumentLibrary.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>BusinessObjectCore.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BusinessObjects.ReportingService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.SpellChecker.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpellChecker.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Stimulsoft Reports.Ultimate 2012.1\Bin\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Stimulsoft Reports.Ultimate 2012.1\Bin\Stimulsoft.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls.Win, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Stimulsoft Reports.Ultimate 2012.1\Bin\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Stimulsoft Reports.Ultimate 2012.1\Bin\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDocumentViewBookKeep.cs" />
+    <Compile Include="BaseDocumentViewContract.cs" />
+    <Compile Include="BaseDocumentViewFinance.cs" />
+    <Compile Include="BaseDocumentViewMktg.cs" />
+    <Compile Include="BaseDocumentViewPerson.cs" />
+    <Compile Include="BaseDocumentViewPrice.cs" />
+    <Compile Include="BaseDocumentViewRoute.cs" />
+    <Compile Include="BaseDocumentViewSale.cs" />
+    <Compile Include="BaseDocumentViewService.cs" />
+    <Compile Include="BaseDocumentViewStore.cs" />
+    <Compile Include="BaseDocumentViewTaxes.cs" />
+    <Compile Include="Controls\ControlBookKeep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlBookKeep.Designer.cs">
+      <DependentUpon>ControlBookKeep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlCalcPrices.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlCalcPrices.Designer.cs">
+      <DependentUpon>ControlCalcPrices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlContract.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlContract.Designer.cs">
+      <DependentUpon>ControlContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlContractComputer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlContractComputer.Designer.cs">
+      <DependentUpon>ControlContractComputer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlContractOfficialNote .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlContractOfficialNote .Designer.cs">
+      <DependentUpon>ControlContractOfficialNote .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlContractPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlContractPrinter.Designer.cs">
+      <DependentUpon>ControlContractPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentAdv.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentAdv.Designer.cs">
+      <DependentUpon>ControlDocumentAdv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentConfigBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentConfigBase.Designer.cs">
+      <DependentUpon>ControlDocumentConfigBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentViewSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentViewSetting.Designer.cs">
+      <DependentUpon>ControlDocumentViewSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDocumentView.cs" />
+    <Compile Include="Controls\ControlDocumentPanelLinks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDocumentPanelLinks.Designer.cs">
+      <DependentUpon>ControlDocumentPanelLinks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlFinance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlFinance.Designer.cs">
+      <DependentUpon>ControlFinance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlMktgCompany.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlMktgCompany.Designer.cs">
+      <DependentUpon>ControlMktgCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlMktgQuestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlMktgQuestion.Designer.cs">
+      <DependentUpon>ControlMktgQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPrices.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlPrices.Designer.cs">
+      <DependentUpon>ControlPrices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPricesConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlPricesConfig.Designer.cs">
+      <DependentUpon>ControlPricesConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlProductRest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlProductRest.Designer.cs">
+      <DependentUpon>ControlProductRest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlRouteDocument.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlRouteDocument.Designer.cs">
+      <DependentUpon>ControlRouteDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlSales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlSales.Designer.cs">
+      <DependentUpon>ControlSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlSalesConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlSalesConfig.Designer.cs">
+      <DependentUpon>ControlSalesConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlService.Designer.cs">
+      <DependentUpon>ControlService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlStore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlStore.Designer.cs">
+      <DependentUpon>ControlStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlStoresLeaves.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlStoresLeaves.Designer.cs">
+      <DependentUpon>ControlStoresLeaves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlMainDocument.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlMainDocument.Designer.cs">
+      <DependentUpon>ControlMainDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlTaxes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlTaxes.Designer.cs">
+      <DependentUpon>ControlTaxes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPerson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlPerson.Designer.cs">
+      <DependentUpon>ControlPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDialogs.cs" />
+    <Compile Include="DocumentExtention.cs" />
+    <Compile Include="DocumentViewConfig.cs" />
+    <Compile Include="ExtentionPanel.cs" />
+    <Compile Include="Finance\DocumentViewMoneyIn.cs" />
+    <Compile Include="Finance\DocumentViewMoneyOut.cs" />
+    <Compile Include="DocumentPreviewThread.cs" />
+    <Compile Include="Mktg\DocumentViewMktgQuestion.cs" />
+    <Compile Include="Paperwork\DocumentViewCommand.cs" />
+    <Compile Include="Paperwork\DocumentViewComputer.cs" />
+    <Compile Include="Paperwork\DocumentViewDemands.cs" />
+    <Compile Include="Paperwork\DocumentViewInstruction.cs" />
+    <Compile Include="Paperwork\DocumentViewLetterIn.cs" />
+    <Compile Include="Paperwork\DocumentViewLetterOut.cs" />
+    <Compile Include="Paperwork\DocumentViewOfficialNote.cs" />
+    <Compile Include="Paperwork\DocumentViewPrinter.cs" />
+    <Compile Include="Paperwork\DocumentViewVerification.cs" />
+    <Compile Include="Paperwork\DocumentViewАuditEquipment.cs" />
+    <Compile Include="Paperwork\DocumentViewСontractByProduct.cs" />
+    <Compile Include="Person\DocumentViewPersonOut.cs" />
+    <Compile Include="Person\DocumentViewPersonMove.cs" />
+    <Compile Include="Person\DocumentViewPersonIn.cs" />
+    <Compile Include="Price\ConfigDocumentViewPriceList.cs" />
+    <Compile Include="Price\DocumentViewPriceListCommandClient.cs" />
+    <Compile Include="Price\DocumentViewPriceListClient.cs" />
+    <Compile Include="Price\DocumentViewPriceListCommand.cs" />
+    <Compile Include="Price\DocumentViewPriceListCompetitor.cs" />
+    <Compile Include="Price\DocumentViewPriceListCompetitorClient.cs" />
+    <Compile Include="Price\DocumentViewPriceListSuplyer.cs" />
+    <Compile Include="PrintDataDocumentHeader.cs" />
+    <Compile Include="PrintDataDocumentProductDetail.cs" />
+    <Compile Include="Route\DocumentViewRoute.cs" />
+    <Compile Include="SalesExtention.cs" />
+    <Compile Include="Price\DocumentViewPriceList.cs" />
+    <Compile Include="Mktg\DocumentViewMktgAnketa.cs" />
+    <Compile Include="Sales\ConfigDocumentViewSales.cs" />
+    <Compile Include="Sales\DocumentViewSaleAccountIn.cs" />
+    <Compile Include="Sales\DocumentViewSaleAccountOut.cs" />
+    <Compile Include="Sales\DocumentViewSaleActIn.cs" />
+    <Compile Include="Sales\DocumentViewSaleActOut.cs" />
+    <Compile Include="Sales\DocumentViewSaleAssotrimentOut.cs" />
+    <Compile Include="Sales\DocumentViewSaleAssotrimentIn.cs" />
+    <Compile Include="Sales\DocumentViewSaleIn.cs" />
+    <Compile Include="Sales\DocumentViewSaleInventory.cs" />
+    <Compile Include="Sales\DocumentViewSaleMove.cs" />
+    <Compile Include="Sales\DocumentViewSaleOrderIn.cs" />
+    <Compile Include="Sales\DocumentViewSaleOrderOut.cs" />
+    <Compile Include="Sales\DocumentViewSaleOut.cs" />
+    <Compile Include="Sales\DocumentViewSaleReturnByer.cs" />
+    <Compile Include="Sales\DocumentViewSaleReturnSupplyer.cs" />
+    <Compile Include="Services\DocumentViewServiceAccountIn.cs" />
+    <Compile Include="Services\DocumentViewServiceAccountOut.cs" />
+    <Compile Include="Services\DocumentViewServiceActIn.cs" />
+    <Compile Include="Services\DocumentViewServiceActOut.cs" />
+    <Compile Include="Services\DocumentViewServiceOrderOut.cs" />
+    <Compile Include="Services\DocumentViewServiceOrderIn.cs" />
+    <Compile Include="Store\DocumentViewStoreActIn.cs" />
+    <Compile Include="Store\DocumentViewStoreActOut.cs" />
+    <Compile Include="Tax\DocumentViewTaxCorIn.cs" />
+    <Compile Include="Tax\DocumentViewTaxCorOut.cs" />
+    <Compile Include="StoreExtention.cs" />
+    <Compile Include="Store\DocumentViewStoreFixProductRemain.cs" />
+    <Compile Include="Store\DocumentViewStoreIn.cs" />
+    <Compile Include="Store\DocumentViewStoreInventory.cs" />
+    <Compile Include="Store\DocumentViewStoreMove.cs" />
+    <Compile Include="Store\DocumentViewStoreOut.cs" />
+    <Compile Include="Store\DocumentViewStoreReturnByer.cs" />
+    <Compile Include="Store\DocumentViewStoreReturnSupplyer.cs" />
+    <Compile Include="Tax\DocumentViewTaxIn.cs" />
+    <Compile Include="Paperwork\DocumentViewContract.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tax\DocumentViewTaxOut.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\ControlBookKeep.resx">
+      <DependentUpon>ControlBookKeep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlCalcPrices.resx">
+      <DependentUpon>ControlCalcPrices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlContract.resx">
+      <DependentUpon>ControlContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlContractComputer.resx">
+      <DependentUpon>ControlContractComputer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlContractOfficialNote .resx">
+      <DependentUpon>ControlContractOfficialNote .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlContractPrinter.resx">
+      <DependentUpon>ControlContractPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlDocumentAdv.resx">
+      <DependentUpon>ControlDocumentAdv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlDocumentConfigBase.resx">
+      <DependentUpon>ControlDocumentConfigBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlDocumentViewSetting.resx">
+      <DependentUpon>ControlDocumentViewSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlDocumentPanelLinks.resx">
+      <DependentUpon>ControlDocumentPanelLinks.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlFinance.resx">
+      <DependentUpon>ControlFinance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlMktgCompany.resx">
+      <DependentUpon>ControlMktgCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlMktgQuestion.resx">
+      <DependentUpon>ControlMktgQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlPrices.resx">
+      <DependentUpon>ControlPrices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlPricesConfig.resx">
+      <DependentUpon>ControlPricesConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlProductRest.resx">
+      <DependentUpon>ControlProductRest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlRouteDocument.resx">
+      <DependentUpon>ControlRouteDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlSales.resx">
+      <DependentUpon>ControlSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlSalesConfig.resx">
+      <DependentUpon>ControlSalesConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlService.resx">
+      <DependentUpon>ControlService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlStore.resx">
+      <DependentUpon>ControlStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlStoresLeaves.resx">
+      <DependentUpon>ControlStoresLeaves.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlMainDocument.resx">
+      <DependentUpon>ControlMainDocument.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlTaxes.resx">
+      <DependentUpon>ControlTaxes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlPerson.resx">
+      <DependentUpon>ControlPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\BisinesObjectsCore\BusinessObjectsCore.csproj">
+      <Project>{43F15828-0401-4CC3-BB65-FFF4799B3136}</Project>
+      <Name>BusinessObjectsCore</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\BusinessObjects.WindowsAdv\BusinessObjects.Windows.csproj">
+      <Project>{50F0D911-CB4F-4273-9939-4E5F8A2E880F}</Project>
+      <Name>BusinessObjects.Windows</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\BusinessObjects.Workflows\BusinessObjects.Workflows.csproj">
+      <Project>{5DF51738-4D65-45CC-B0B4-9CC81C6DA2A1}</Project>
+      <Name>BusinessObjects.Workflows</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BusinessObjectCore.snk" />
+    <None Include="Печатные формы\Contracts\ContractPrintFormComputer.mrt" />
+    <None Include="Печатные формы\Contracts\ContractPrintFormPrinter.mrt" />
+    <None Include="Печатные формы\ReportErrorPrintFormSecure.mrt" />
+    <None Include="Печатные формы\Taxes\TaxPrintFormTaxOutUa4.mrt" />
+    <None Include="Печатные формы\Finances\FinancePrintFormIn.mrt" />
+    <None Include="Печатные формы\Finances\FinancePrintFormInV2.mrt" />
+    <None Include="Печатные формы\Finances\FinancePrintFormOut.mrt" />
+    <None Include="Печатные формы\Person\PersonPrintFormIn.mrt" />
+    <None Include="Печатные формы\Person\PersonPrintFormInV2.mrt" />
+    <None Include="Печатные формы\Person\PersonPrintFormMove.mrt" />
+    <None Include="Печатные формы\Person\PersonPrintFormOut.mrt" />
+    <None Include="Печатные формы\Person\PersonPrintFormOutV2.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormClientCommand.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormClient.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormClientCommandNoCode.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormClientNoCode.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormCommand.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormCommandNoCode.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormCompetitor.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormCompetitorInd.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormCompetitorIndNoCode.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormCompetitorNoCode.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormNoCode.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormSuplyer.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormSuplyerNoCode.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormSuplyerNotice.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintFormSuplyerNoticeNoCode.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormAccountInNdsV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormAccountInV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormAccountOutNdsV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormAccountOutV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormInNds.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormInNdsV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormInOnlyQty.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormInOnlyQtyV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormInV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormOrderBuyerNdsV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormOrderBuyerV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormOrderSupplyerV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormOutNdsV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormOutNdsWithDiscount.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormOutQtyClient.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormOutQtyClientV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormOutV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormReturnBuyerV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormReturnSupplierNds.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormReturnSupplierNdsV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormReturnSupplierV2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormTaxOutUa.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormTaxOutUa2.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormTaxOutUa3.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormAccountIn.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormAccountInNds.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormAccountOut.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormAccountOutNds.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormIn.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormInNds.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormOrderBuyer.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormOrderBuyerNds.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormOrderSupplyer.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormOrderSupplyerNds.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormOut.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormOutAct.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormOutActNds.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormOutActNdsV2.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormOutActV2.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormOutNds.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormOutNdsV2.mrt" />
+    <None Include="Печатные формы\Services\ServicePrintFormOutNdsWithDiscount.mrt" />
+    <None Include="Печатные формы\Store\StorePrintFormReturnSupplier.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormTaxIn.mrt" />
+    <None Include="Печатные формы\Store\StorePrintFormMove.mrt" />
+    <None Include="Печатные формы\Store\StorePrintFormOutNds.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormAccountIn.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormAccountInNds.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormAccountOut.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormAccountOutNds.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormContract.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormIn.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormOrderBuyerNds.mrt" />
+    <None Include="Печатные формы\Store\StorePrintFormInOnlyQtyStore.mrt" />
+    <None Include="Печатные формы\Store\StorePrintFormIn.mrt" />
+    <None Include="Печатные формы\Store\StorePrintFormInOnlyQty.mrt" />
+    <None Include="Печатные формы\Store\StorePrintFormInventory.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormMove.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormOrderBuyer.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormOrderSupplyer.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormOut.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormOutNds.mrt" />
+    <None Include="Печатные формы\Store\StorePrintFormOutQtyClient.mrt" />
+    <None Include="Печатные формы\Store\StorePrintFormOut.mrt" />
+    <None Include="Печатные формы\Prices\PricePrintForm.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormReturnBuyer.mrt" />
+    <None Include="Печатные формы\Store\StorePrintFormReturnBuyer.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormReturnSupplier.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormRevaluation.mrt" />
+    <None Include="Печатные формы\Sales\SalesPrintFormTaxOut.mrt" />
+    <None Include="Печатные формы\Taxes\TaxPrintFormTaxCorInUa.mrt" />
+    <None Include="Печатные формы\Taxes\TaxPrintFormTaxCorOutUa.mrt" />
+    <None Include="Печатные формы\UA\Person\PersonPrintFormInUA.mrt" />
+    <None Include="Печатные формы\UA\Person\PersonPrintFormInV2UA.mrt" />
+    <None Include="Печатные формы\UA\Person\PersonPrintFormMoveUA.mrt" />
+    <None Include="Печатные формы\UA\Person\PersonPrintFormOutUA.mrt" />
+    <None Include="Печатные формы\UA\Person\PersonPrintFormOutV2UA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormClientCommandNoCodeUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormClientCommandUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormClientNoCodeUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormClientUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormCommandNoCodeUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormCommandUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormCompetitorIndNoCodeUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormCompetitorIndUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormCompetitorNoCodeUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormCompetitorUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormNoCodeUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormSuplyerNoCodeUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormSuplyerNoticeNoCodeUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormSuplyerNoticeUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormSuplyerUA.mrt" />
+    <None Include="Печатные формы\UA\Price\PricePrintFormUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormAccountInNdsUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormAccountInNdsV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormAccountInUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormAccountInV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormAccountOutNdsUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormAccountOutNdsV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormAccountOutUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormAccountOutV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormContractUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormInNdsUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormInNdsV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormInOnlyQtyUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormInOnlyQtyV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormInUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormInV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormMoveUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormOrderBuyerNdsUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormOrderBuyerNdsV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormOrderBuyerUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormOrderBuyerV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormOrderSupplyerUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormOrderSupplyerV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormOutNdsUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormOutNdsV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormOutNdsWithDiscountUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormOutQtyClientUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormOutQtyClientV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormOutUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormOutV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormReturnBuyerUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormReturnBuyerV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormReturnSupplierNdsUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormReturnSupplierNdsV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormReturnSupplierUA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormReturnSupplierV2UA.mrt" />
+    <None Include="Печатные формы\UA\Sales\SalesPrintFormRevaluationUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormAccountInNdsUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormAccountInUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormAccountOutNdsUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormAccountOutUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormInNdsUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormInUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormOrderBuyerNdsUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormOrderBuyerUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormOrderSupplyerNdsUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormOrderSupplyerUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormOutActNdsUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormOutActNdsV2UA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormOutActUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormOutActV2UA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormOutNdsUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormOutNdsV2UA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormOutNdsWithDiscountUA.mrt" />
+    <None Include="Печатные формы\UA\Service\ServicePrintFormOutUA.mrt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Accounting\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

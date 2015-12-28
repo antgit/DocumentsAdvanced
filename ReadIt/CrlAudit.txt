@@ -1,0 +1,263 @@
+http://dotnethitman.spaces.live.com/blog/cns!E149A8B1E1C25B14!304.entry?sa=851812384
+http://www.sqlteam.com/article/centralized-asynchronous-auditing-with-service-broker
+http://www.sqlservercentral.com/articles/SS2K5+-+CLR+Integration/creatingagenericaudittriggerwithsql2005clr/2502/
+
+íîÿáðÿ 09
+Creating a generic CLR audit trigger
+There’s an interesting article at SqlJunkies http://sqljunkies.com/Article/4CD01686-5178-490C-A90A-5AEEF5E35915.scuk which shows how to create a generic CLR audit trigger. The audit trigger works great and includes tracking of: 
+
+insertions of new records 
+deletions of existing records 
+and modifications of fields in existing records.
+But there is just one small problem with this trigger code. The PerformedBy column of the Audit table in the sample code is set to the UserID of the connection string which in most applications would be the same UserID for all connections because of connection pooling. This means the trigger will log all operations performed by the application but it will not log the real user (application user) who made the change. 
+
+So the first step was to make sure that the application logged in user’s UserID is passed in to all the CRUD stored procedures from my web application. 
+
+CREATE PROCEDURE spSomeProc(
+    ...
+    @PerformedByUserId VARCHAR(32))
+AS
+BEGIN
+    SET NOCOUNT ON;
+    ...
+    RETURN;
+END
+GO
+You can get the application logged in user’s UserID from HttpContext.Current.User.Identity.Name or Thread.CurrentPrincipal.Identity.Name and pass this value from the application to the CRUD stored procedure. 
+
+Now that we have a way to pass in the UserID to our stored procedures, we need to somehow pass this parameter value to the trigger code. Although there is no direct way of passing a parameter down to the trigger, the forums at SqlJunkies suggested to create a temporary table in your procedure, insert the UserID as the only row in the temporary table and then retrieve this value in the CLR trigger by executing a query against this temporary table. Since the trigger uses the same connection session we don't need to create a global temporary table. 
+
+This solution works fine but it uses the tempdb which is a bit of a concern as a load test scenario performing CRUD operations could easily bloat up the tempdb. 
+
+Another option is to pass in the UserID via the CONTEXT_INFO, which frees up tempdb for other tasks. We can do so with the following code snippet added at the beginning of every CRUD stored procedure 
+
+CREATE PROCEDURE spSomeProc(
+    ...
+    @PerformedByUserId    VARCHAR(32))
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @BinaryUserId VARBINARY(128);
+    SET @BinaryUserId = CAST(@PerformedByUserId AS VARBINARY(128));
+
+    SET CONTEXT_INFO @BinaryUserId;
+
+    ...
+
+    SET CONTEXT_INFO 0x0;
+    RETURN;
+END
+GO
+and in the CLR trigger you can get the CONTEXT_INFO as: 
+
+...
+oCmd.CommandText  = "SELECT CAST(CONTEXT_INFO() AS VARCHAR(128))";
+string userid = (string)oCmd.ExecuteScalar();
+... 
+We can also add an additional check here to get the UserID from “SELECT CURRENT_USER” just to make sure that if the CONTEXT_INFO is not set or returns NULL as in the case where some DBA made a change to any of the tables directly (for production support issue or whatever). 
+
+SqlCommand CurrentUserCmd = new SqlCommand("SELECT CAST(CONTEXT_INFO() AS VARCHAR(128))", Connection);
+string CurrentUser = CurrentUserCmd.ExecuteScalar().ToString();
+if (string.IsNullOrEmpty(CurrentUser))
+{
+    CurrentUserCmd.CommandText = "SELECT CURRENT_USER";
+    CurrentUser = CurrentUserCmd.ExecuteScalar().ToString();
+}
+The full source code from the original article and modified as described above (converted to C#) is given below 
+
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using Microsoft.SqlServer.Server; 
+
+public partial class Triggers
+{
+    //This is the original template for Trigger metadata. Note that it is table-specific (i.e. it suggests that the trigger should apply to one table only).
+    //<Microsoft.SqlServer.Server.SqlTrigger(Name:="Trigger1", Target:="Table1", Event:="FOR UPDATE")> _ 
+
+    //This is our actual declaration. Note that it does not specify any particular table. We don't know if it is Microsoft's intention to allow table-agnostic trigger code, but this works and we hope that it keeps working.
+    //GENERIC AUDIT TRIGGER: AuditCommon
+    [Microsoft.SqlServer.Server.SqlTrigger(Name = "AuditCommon", Event = "FOR UPDATE, INSERT, DELETE")]
+    public static void AuditCommon()
+    {
+        try
+        {
+#if(DEBUG)
+            EmitDebugMessage("Enter Trigger");
+#endif 
+
+            //Grab the already-open Connection to use as an argument
+#if(DEBUG)
+            EmitDebugMessage("Open Connection");
+#endif
+            SqlTriggerContext Context = SqlContext.TriggerContext;
+            SqlConnection Connection = new SqlConnection("CONTEXT CONNECTION=TRUE");
+            Connection.Open(); 
+
+            //Load the "inserted" table
+#if(DEBUG)
+            EmitDebugMessage("Load INSERTED");
+#endif
+            SqlDataAdapter TableLoader = new SqlDataAdapter("SELECT * FROM INSERTED", Connection);
+            DataTable InsertedTable = new DataTable();
+            TableLoader.Fill(InsertedTable); 
+
+            //Load the "deleted" table
+#if(DEBUG)
+            EmitDebugMessage("Load DELETED");
+#endif
+            TableLoader.SelectCommand.CommandText = "SELECT * FROM DELETED";
+            DataTable DeletedTable = new DataTable();
+            TableLoader.Fill(DeletedTable); 
+
+            //Prepare the "audit" table for insertion
+#if(DEBUG)
+            EmitDebugMessage("Load AUDIT schema for insertion");
+#endif
+            SqlDataAdapter AuditAdapter = new SqlDataAdapter("SELECT * FROM AUDIT WHERE 1 = 0", Connection);
+            DataTable AuditTable = new DataTable();
+            AuditAdapter.FillSchema(AuditTable, SchemaType.Source);
+            SqlCommandBuilder AuditCommandBuilder = new SqlCommandBuilder(AuditAdapter);
+            //Create DataRow objects corresponding to the trigger table rows.
+#if(DEBUG)
+            EmitDebugMessage("Create internal representations of trigger table rows");
+#endif
+            string TableName = "";
+            DataRow InsertedRow = null;
+            if (InsertedTable.Rows.Count > 0)
+            {
+                InsertedRow = InsertedTable.Rows[0];
+                TableName = DeriveTableNameFromKeyFieldName(InsertedTable.Columns[0].ColumnName);
+            }
+            DataRow DeletedRow = null;
+            if (DeletedTable.Rows.Count > 0)
+            {
+                DeletedRow = DeletedTable.Rows[0];
+                TableName = DeriveTableNameFromKeyFieldName(DeletedTable.Columns[0].ColumnName);
+            } 
+
+            //get the current database user
+            SqlCommand CurrentUserCmd = new SqlCommand("SELECT CAST(CONTEXT_INFO() AS VARCHAR(128))", Connection);
+            string CurrentUser = CurrentUserCmd.ExecuteScalar().ToString();
+            if (string.IsNullOrEmpty(CurrentUser))
+            {
+                CurrentUserCmd.CommandText = "SELECT CURRENT_USER";
+                CurrentUser = CurrentUserCmd.ExecuteScalar().ToString();
+            }
+            //Perform different audits based on the type of action.
+            switch (Context.TriggerAction)
+            {
+                case TriggerAction.Update:
+                    //Ensure that both INSERTED and DELETED are populated. If not, this is not a valid update.
+                    if (InsertedRow != null && DeletedRow != null)
+                    {
+                        //Walk through all the columns of the table.
+                        foreach (DataColumn Column in InsertedTable.Columns)
+                        {
+                            //ALTERNATIVE CODE to compare values and record only if they are different:
+                            //If Not DeletedRow.Item(Column.Ordinal).Equals(InsertedRow.Item(Column.Ordinal)) Then
+                            //This code records any attempt to update, whether the new value is different or not.
+                            if (Context.IsUpdatedColumn(Column.Ordinal))
+                            {
+                                //DEBUG output indicating field change
+#if(DEBUG)
+                                EmitDebugMessage("Create UPDATE Audit: Column Name = " + Column.ColumnName + ", Old Value = '" + DeletedRow[Column.Ordinal].ToString() + "'" + ", New Value = '" + InsertedRow[Column.Ordinal].ToString() + "'");
+#endif
+                                //Create audit record indicating field change
+                                DataRow AuditRow = AuditTable.NewRow(); 
+
+                                //populate fields common to all audit records
+                                long RowId = (long)InsertedRow[0]; 
+
+                                //use "Inserted.TableName" when Microsoft fixes the CLR to supply it
+                                WriteCommonAuditData(AuditRow, TableName, RowId, CurrentUser, "UPDATE"); 
+
+                                //write update-specific fields
+                                AuditRow["FieldName"] = Column.ColumnName;
+                                AuditRow["OldValue"] = DeletedRow[Column.Ordinal].ToString();
+                                AuditRow["NewValue"] = InsertedRow[Column.Ordinal].ToString(); 
+
+                                //insert the new row into the audit table
+                                AuditTable.Rows.InsertAt(AuditRow, 0);
+                            }
+                        }
+                    }
+                    break; 
+
+                case TriggerAction.Insert:
+                    //If the INSERTED row is not populated, then this is not a valid insertion.
+                    if (InsertedRow != null)
+                    {
+                        //DEBUG output indicating row insertion
+#if(DEBUG)
+                        EmitDebugMessage("Create INSERT Audit: Row = '" + InsertedRow[0].ToString() + "'");
+#endif
+                        //Create audit record indicating field change
+                        DataRow AuditRow = AuditTable.NewRow();
+                        //populate fields common to all audit records
+                        long RowId = (long)InsertedRow[0];
+                        //use "Inserted.TableName" when Microsoft fixes the CLR to supply it
+                        WriteCommonAuditData(AuditRow, TableName, RowId, CurrentUser, "INSERT");
+                        //insert the new row into the audit table
+                        AuditTable.Rows.InsertAt(AuditRow, 0);
+                    }
+                    break;
+                case TriggerAction.Delete:
+                    //If the DELETED row is not populated, then this is not a valid deletion.
+                    if (DeletedRow != null)
+                    {
+                        //DEBUG output indicating row insertion
+#if(DEBUG)
+                        EmitDebugMessage("Create DELETE Audit: Row = '" + DeletedRow[0].ToString() + "'");
+#endif
+                        //Create audit record indicating field change
+                        DataRow AuditRow = AuditTable.NewRow();
+                        //populate fields common to all audit records
+                        long RowId = (long)DeletedRow[0];
+                        //use "Inserted.TableName" when Microsoft fixes the CLR to supply it
+                        WriteCommonAuditData(AuditRow, TableName, RowId, CurrentUser, "DELETE");
+                        //insert the new row into the audit table
+                        AuditTable.Rows.InsertAt(AuditRow, 0);
+                    }
+                    break;
+            } 
+
+            //update the audit table
+            AuditAdapter.Update(AuditTable);
+            //finish
+#if(DEBUG)
+            EmitDebugMessage("Exit Trigger");
+#endif
+        }
+        catch (Exception ex)
+        {
+            //Put exception handling code here if you want to connect this to your database-based error logging system. Without this Try/Catch block, any error in the trigger routine will stop the event that fired the trigger. This is early-stage development and we're not expecting any exceptions, so for the moment we just need to know about them if they occur.
+            throw;
+        }
+    } 
+
+    //Write data into the fields of an Audit table row that is common to all types of audit activities.
+    private static void WriteCommonAuditData(DataRow auditRow, string tableName, long rowId, string currentUser, string operation)
+    {
+        auditRow["TableName"] = tableName;
+        auditRow["RowId"] = rowId;
+        auditRow["OccurredAt"] = DateTime.Now;
+        auditRow["PerformedBy"] = currentUser;
+        auditRow["Operation"] = operation;
+    } 
+
+    //SQL CLR does not deliver the proper table name from either InsertedTable.TableName or DeletedTable.TableName, so we must use a substitute based on our key naming convention. We assume that in each table, the KeyFieldName = TableName + "Id". Remove this routine and its uses as soon as we can get the table name from the CLR.
+    private static string DeriveTableNameFromKeyFieldName(string keyFieldName)
+    {
+        return keyFieldName.Substring(0, keyFieldName.Length - 2); //assumes KeyName = TableName & "Id"
+    } 
+
+    //Emit debug messages. This function gives us the option to turn off debugging messages by changing one value (here).
+#if(DEBUG)
+    private static void EmitDebugMessage(string message)
+    {
+        SqlContext.Pipe.Send(message);
+    }
+#endif

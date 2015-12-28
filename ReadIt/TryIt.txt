@@ -1,0 +1,299 @@
+WWF designer !!!!
+http://xhinker.com/2010/06/21/WF4CustomWF4Designer.aspx
+http://msmvps.com/blogs/theproblemsolver/archive/2009/12/23/rehosting-the-workflow-designer-in-wf4.aspx
+http://msmvps.com/blogs/theproblemsolver/archive/2010/03/07/loading-xaml-workflows-in-wf4.aspx
+!!!!!
+http://www.gotdotnet.ru/blogs/Varg/6550/
+
+http://msdn.microsoft.com/en-us/library/aa718189(v=VS.90).aspx
+http://browse.develop.com/assembly/class/xaml/
+Activity workflow = ActivityXamlServices.Load(ActivityXamlServices.CreateReader(new XamlXmlReader(@"../../Workflow1.xaml", new XamlXmlReaderSettings { LocalAssembly = System.Reflection.Assembly.GetExecutingAssembly() }))); 
+WorkflowInvoker.Invoke(workflow);
+
+
+
+exec at
+http://www.mssqltips.com/tip.asp?tip=1757
+
+Если у тебя файл сборки заблокирован, соответственно он загрузился в оба домена.
+В своем приложении я делаю как показано ниже. 
+Работает и освобождает домен и сборку вполне корректно
+
+
+System.Runtime.Remoting.ObjectHandle objh = null;
+AppDomain dom = null;//Тут была некая логика
+          if (dom==null)
+          {
+              try
+              {                  
+                  System.Security.Policy.Evidence ev=new System.Security.Policy.Evidence();
+                  
+                  AppDomainSetup inf=new AppDomainSetup();
+                  inf.ApplicationBase=Application.StartupPath ;
+                  inf.PrivateBinPath = Application.StartupPath + "\\DynamicAssemblyDir";
+                  inf.LoaderOptimization = LoaderOptimization.MultiDomain;                  
+                  
+
+                  System.Security.PermissionSet ps = new System.Security.PermissionSet(System.Security.Permissions.PermissionState.Unrestricted);                  
+                  
+                  dom = AppDomain.CreateDomain(class_assembly_name,ev,inf, ps, null);                 
+                  /*dom.Load(asmName);*/
+                  GetDomain(dom);
+              }
+              catch (FileNotFoundException e)
+              {
+                  throw new Tuz_Exception(string.Format("Не найден Файл динамических сборок\r\nСообщение об ошибке: {0}", e.Message));
+              }
+          }
+
+          objh = dom.CreateInstance(class_assembly_name,class_work);
+          .......;.
+          AppDomain.Unload(dom);
+
+----------------------------------------------
+using System;
+  using System.Reflection;
+  using System.Windows.Forms;
+
+    public class MyAppDomain
+    {
+        public static void Main(string[] args)
+        {
+      AppDomain ad = AppDomain.CurrentDomain;
+      Assembly[] loadedAssemblies = ad.GetAssemblies();
+      
+      Console.WriteLine("Here are the assemblies loaded in this appdomain\n");
+      foreach(Assembly a in loadedAssemblies)
+      {
+        Console.WriteLine(a.FullName);
+      }
+        }
+    }
+------------------------------------------------
+using System;
+using System.Reflection;
+using System.Reflection.Emit;
+
+class CodeGenerator {       
+    Type t;
+    public static void Main() {
+       CodeGenerator codeGen = new CodeGenerator();
+       Type t = codeGen.T;
+
+       if (t != null) {
+          object o = Activator.CreateInstance(t);
+          MethodInfo helloWorld = t.GetMethod("HelloWorld");
+          if (helloWorld != null) {
+             // Run the HelloWorld Method
+             helloWorld.Invoke(o, null);
+          } else {
+             Console.WriteLine("Could not retrieve MethodInfo");
+          }
+       } else {
+             Console.WriteLine("Could not access the Type");
+       }
+    } 
+    public CodeGenerator() {
+       AppDomain currentDomain = AppDomain.CurrentDomain;
+
+       AssemblyName assemName = new AssemblyName();
+       assemName.Name = "MyAssembly";
+
+       AssemblyBuilder assemBuilder = currentDomain.DefineDynamicAssembly(assemName, AssemblyBuilderAccess.Run);
+
+       ModuleBuilder moduleBuilder = assemBuilder.DefineDynamicModule("MyModule");
+
+       TypeBuilder typeBuilder = moduleBuilder.DefineType("MyClass",TypeAttributes.Public);
+
+       MethodBuilder methodBuilder = typeBuilder.DefineMethod("HelloWorld", MethodAttributes.Public,null,null);
+
+       ILGenerator msilG = methodBuilder.GetILGenerator();
+       msilG.EmitWriteLine("www.java2s.com");
+       msilG.Emit(OpCodes.Ret);
+
+       t = typeBuilder.CreateType();
+   }
+   public Type T {
+       get { 
+         return this.t;
+       }
+   }
+}
+----------------------------------------------
+using System;
+using System.Reflection;
+
+interface IMyInterface {
+    void PrintAString(string s);
+    void PrintAnInteger(int i);
+    void PrintSomeNumbers(string desc, int i, double d);
+    int GetANumber(string s);
+}
+
+public class MyClass : IMyInterface {
+    public MyClass() {
+    }
+    public void PrintAString(string s) {
+        Console.WriteLine("PrintAString: {0}", s);
+    }
+    public void PrintAnInteger(int i) {
+        Console.WriteLine("PrintAnInteger: {0}", i);
+    }
+    public void PrintSomeNumbers(string desc, int i, double d) {
+        Console.WriteLine("PrintSomeNumbers String: {0}", desc);
+        Console.WriteLine("Integer: {0}", i);
+        Console.WriteLine("Double: {0}", d);
+    }
+    public int GetANumber(string s) {
+        Console.WriteLine("GetANumber: {0}", s);
+        return 99;
+    }
+    public int DoItAll(string s, int i, double d) {
+        IMyInterface mi = (IMyInterface)this;
+        mi.PrintSomeNumbers(s, i, d);
+        return mi.GetANumber(s);
+    }
+}
+
+public class MainClass {
+    public static void DoDynamicInvocation(string assembly) {
+        Assembly a = Assembly.LoadFrom(assembly);
+        foreach (Type t in a.GetTypes()) {
+            if (t.IsClass == false)
+                continue;
+            if (t.GetInterface("IMyInterface") == null)
+                continue;
+            Console.WriteLine("Creating instance of class {0}", t.FullName);
+            object obj = Activator.CreateInstance(t);
+            object[] args = { "Dynamic", 1, 99.6 };
+            object result;
+            result = t.InvokeMember("DoItAll",BindingFlags.Default|BindingFlags.InvokeMethod,null,obj,args);
+            Console.WriteLine("Result of dynamic call: {0}", result);
+            object[] args2 = { 12 };
+            t.InvokeMember("PrintAnInteger",BindingFlags.Default | BindingFlags.InvokeMethod,null,obj,args2);
+        }
+    }
+    public static void Main(string[] args) {
+        MyClass dmi = new MyClass();
+        dmi.PrintSomeNumbers("PrintMe", 1, 1.9);
+        int i = dmi.GetANumber("GiveMeOne");
+        Console.WriteLine("I = {0}", i);
+
+        DoDynamicInvocation(args[0]);
+    }
+}
+------------------------------------
+Observer Pattern Demo 
+ 
+ 
+
+using System;
+public delegate void ChangedEventHandler(object sender, EventArgs e);
+
+public class Subject {
+
+    private string data;
+    public event ChangedEventHandler Changed;
+
+    public string Data {
+        get { return data; }
+        set {
+            data = value;
+            this.OnChanged(EventArgs.Empty);
+        }
+    }
+
+    protected virtual void OnChanged(EventArgs e) {
+        if (Changed != null)
+            this.Changed(this, e);
+    }
+
+    public Subject() { }
+}
+
+
+public class Observer {
+    private Subject data;
+    private string observerName;
+
+    public Subject ObservedObject {
+        get { return data; }
+        set { data = value; }
+    }
+
+    private void DataChanged(object sender, EventArgs e) {
+        Console.WriteLine("Notification to {0}, {1}", observerName, data.Data);
+    }
+
+    public void Attach() {
+        data.Changed += new ChangedEventHandler(DataChanged);
+    }
+
+    public void Detach() {
+        data.Changed -= new ChangedEventHandler(DataChanged);
+    }
+
+    public Observer(string name) {
+        observerName = name;
+    }
+}
+
+class Client {
+    static void Main(string[] args) {
+        Subject sub = new Subject();
+        Observer observerA = new Observer("A Observer");
+        Observer observerB = new Observer("B Observer");
+        observerA.ObservedObject = sub;
+        observerB.ObservedObject = sub;
+        observerA.Attach();
+        observerB.Attach();
+        sub.Data = "1";
+        observerA.Detach();
+        sub.Data = "2";
+    }
+}
+ 
+ 
+----------------------------------
+
+Singleton Pattern Demo 
+ 
+using System;
+
+sealed class MyClass {
+    private static bool instanceFlag = false;
+    public static MyClass GetMyClass() {
+        if (!instanceFlag) {
+            instanceFlag = true;
+            return new MyClass();
+        } else {
+            throw new Exception("An engine has already been created!");
+        }
+    }
+
+    private MyClass() {
+        Console.WriteLine("An MyClass");
+    }
+}
+
+class Client {
+
+    static void Main(string[] args) {
+        Console.WriteLine("Attempting to get first engine");
+        try {
+            MyClass eng = MyClass.GetMyClass();
+        } catch (Exception e) {
+            Console.WriteLine(e.Message);
+        }
+
+        Console.WriteLine("Attempting to get second engine");
+        try {
+            MyClass eng = MyClass.GetMyClass();
+
+        } catch (Exception e) {
+            Console.WriteLine(e.Message);
+        }
+
+    }
+} 
+---------------------------------

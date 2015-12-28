@@ -1,0 +1,246 @@
+﻿<Activity mc:Ignorable="sap" x:Class="BusinessObjects.Workflows.Documents.SalesOutToPriceList" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:b="clr-namespace:BusinessObjects;assembly=BusinessObjectsCore" xmlns:b1="clr-namespace:BusinessObjects;assembly=BusinessObjects.Windows" xmlns:bd="clr-namespace:BusinessObjects.Documents;assembly=BusinessObjectsCore" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Xml" xmlns:s3="clr-namespace:System;assembly=System.Core" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core" xmlns:st="clr-namespace:System.Text;assembly=mscorlib" xmlns:sxs="clr-namespace:System.Xml.Serialization;assembly=System.Xml" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="document" Type="InArgument(bd:DocumentSales)" />
+    <x:Property Name="templateId" Type="InArgument(x:Int32)" />
+    <x:Property Name="returnValue" Type="OutArgument(bd:DocumentPrices)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>625,2916</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg3:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Создание документа &quot;Прайс-лист&quot; из документа &quot;Расходная накладная&quot; в разделе &quot;Управление продажами&quot;" sad:XamlDebuggerXmlReader.FileName="D:\Visual Studio 2005\DocumentsSolution3Adv\Source\Core\BusinessObjects.Workflows\Documents\SalesOutToPriceList.xaml" sap:VirtualizedContainerService.HintSize="585,2876">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="bd:DocumentPrices" Default="[New DocumentPrices()]" Modifiers="Mapped" Name="documentOut" />
+      <Variable x:TypeArguments="bd:Document" Name="templateDoc" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg3:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Шаблон документа" sap:VirtualizedContainerService.HintSize="563,58">
+      <Assign.To>
+        <OutArgument x:TypeArguments="bd:Document">[templateDoc]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="bd:Document">[document.Workarea.GetObject(Of BusinessObjects.Documents.Document)(templateId)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[templateDoc Is Nothing]" DisplayName="Проверка шаблона документа" sap:VirtualizedContainerService.HintSize="563,2654">
+      <If.Then>
+        <TerminateWorkflow Exception="[New ApplicationException(&quot;Не правильно указан шаблон документа!&quot;)]" sap:VirtualizedContainerService.HintSize="200,2548" />
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="338,2548">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg3:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Основной документ" sap:VirtualizedContainerService.HintSize="316,1162">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg3:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Основной документ" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="bd:Document">[documentOut.Document]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="bd:Document">[New Document()]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Рабочая область" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="b:Workarea">[documentOut.Document.Workarea]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="b:Workarea">[document.Workarea]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Идентификатор шаблона" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[documentOut.Document.TemplateId]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[templateId]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Папка" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[documentOut.Document.FolderId]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[templateDoc.FolderId]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Форма документа" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[documentOut.Document.ProjectItemId]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[templateDoc.ProjectItemId]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Текущее состояние" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[documentOut.Document.StateId]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[templateDoc.StateId]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Наименование" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[documentOut.Document.Name]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[templateDoc.Name]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Тип документа" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[documentOut.Document.KindId]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[templateDoc.KindId]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Валюта" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[documentOut.Document.CurrencyId]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[templateDoc.CurrencyId]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Кто" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[documentOut.Document.AgentFromId]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[document.Document.AgentFromId]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Подразделение &quot;Кто&quot;" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[documentOut.Document.AgentDepartmentFromId]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[document.Document.AgentDepartmentFromId]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+          <Sequence DisplayName="Документ &quot;Прайс-лист&quot;" sap:VirtualizedContainerService.HintSize="316,476">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg3:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Рабочая область" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="b:Workarea">[documentOut.Workarea]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="b:Workarea">[document.Workarea]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Дата документа" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[documentOut.Date]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[document.Date]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Состояние документа" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[documentOut.StateId]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[document.StateId]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Тип" sap:VirtualizedContainerService.HintSize="242,58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[documentOut.Kind]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[templateDoc.KindId]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+          <Sequence DisplayName="Детализация докумета" sap:VirtualizedContainerService.HintSize="316,608">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="bd:DocumentDetailPrice" Name="docRow" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg3:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ForEach x:TypeArguments="bd:DocumentDetailSale" DisplayName="ForEach&lt;DocumentDetailSale&gt;" sap:VirtualizedContainerService.HintSize="294,484" Values="[document.Details.Where(Function(r) r.StateId = BusinessObjects.State.STATEACTIVE)]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg3:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="bd:DocumentDetailSale">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="bd:DocumentDetailSale" Name="item" />
+                </ActivityAction.Argument>
+                <Sequence sap:VirtualizedContainerService.HintSize="264,378">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg3:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="242,58">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="bd:DocumentDetailPrice">[docRow]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="bd:DocumentDetailPrice">[documentOut.NewRow()]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="242,58">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[docRow.ProductId]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[item.ProductId]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="242,58">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Decimal">[docRow.Value]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Decimal">[item.Price]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </ForEach>
+          </Sequence>
+          <Assign DisplayName="Новый документ" sap:VirtualizedContainerService.HintSize="316,58">
+            <Assign.To>
+              <OutArgument x:TypeArguments="bd:DocumentPrices">[returnValue]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="bd:DocumentPrices">[documentOut]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

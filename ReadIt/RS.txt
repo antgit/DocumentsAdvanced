@@ -1,0 +1,9 @@
+Конечные точки веб-службы сервера отчетов
+http://msdn.microsoft.com/ru-ru/library/ms155398.aspx
+(http://localhost/ReportServer/ReportService2010.asmx)
+
+Построение приложений с помощью веб-службы и платформы .NET Framework
+http://msdn.microsoft.com/ru-ru/library/ms154699.aspx
+
+Задание свойства Url для веб-службы
+http://msdn.microsoft.com/ru-ru/library/ms153652.aspx

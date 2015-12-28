@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BusinessObjects.CustomProperty">
+    <Position X="3.5" Y="1" Width="2.25" />
+    <Members>
+      <Field Name="_value" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>BaseObj\CustomProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessObjects.CustomPropertyDescriptor">
+    <Position X="7" Y="1" Width="1.5" />
+    <Members>
+      <Field Name="_allowNull" Hidden="true" />
+      <Field Name="_dataBaseType" Hidden="true" />
+      <Field Name="_dataField" Hidden="true" />
+      <Field Name="_DbTypeSource" Hidden="true" />
+      <Field Name="_size" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAIAgAABAAEAgAAAAAAAABAAQAAAAAEAAQAgAAIAAAA=</HashCode>
+      <FileName>BaseObj\CustomPropertyDescriptor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

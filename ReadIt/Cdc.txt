@@ -1,0 +1,8 @@
+http://weblogs.sqlteam.com/derekc/archive/2008/01/28/60469.aspx
+
+Script all data of a table
+http://www.sqlservercentral.com/scripts/Script+Data/65998/
+
+Использование Change Data Capture (CDC) SQL SERVER 2008
+http://istomin.wordpress.com/2010/01/21/change-data-capture-cdc-sql-server-2008/
+

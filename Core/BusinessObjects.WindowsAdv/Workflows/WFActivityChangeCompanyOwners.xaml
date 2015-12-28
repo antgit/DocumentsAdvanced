@@ -1,0 +1,83 @@
+﻿<Activity mc:Ignorable="sap" x:Class="BusinessObjects.Windows.Workflows.WFActivityChangeCompanyOwners" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:b="clr-namespace:BusinessObjects;assembly=BusinessObjectsCore" xmlns:b1="clr-namespace:BusinessObjects" xmlns:local="clr-namespace:BusinessObjects.Windows.Workflows" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Xml" xmlns:s3="clr-namespace:System;assembly=System.Core" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core" xmlns:st="clr-namespace:System.Text;assembly=mscorlib" xmlns:sxs="clr-namespace:System.Xml.Serialization;assembly=System.Xml" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Values" Type="InArgument(scg:List(b:Knowledge))" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>828,1216</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence sad:XamlDebuggerXmlReader.FileName="D:\Visual Studio 2005\DocumentsSolution3Adv\Source\Core\BusinessObjects.WindowsAdv\Workflows\WFActivityChangeCompanyOwners.xaml" sap:VirtualizedContainerService.HintSize="788,1176">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <If Condition="[Values Is Nothing]" sap:VirtualizedContainerService.HintSize="766,1052">
+      <If.Then>
+        <TerminateWorkflow Exception="[New ArgumentNullException()]" sap:VirtualizedContainerService.HintSize="200,946" Reason="Не выбранны статьи базы знаний!" />
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="541,946">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="b:Workarea" Name="WA" />
+            <Variable x:TypeArguments="b:Agent" Name="NewOwner" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="519,58">
+            <Assign.To>
+              <OutArgument x:TypeArguments="b:Workarea">[WA]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="b:Workarea">[Values(0).Workarea]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="519,58">
+            <Assign.To>
+              <OutArgument x:TypeArguments="b:Agent">[NewOwner]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="b:Agent">[WA.Empty(Of Agent)()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <local:ActivityBrowseMyCompanies CurrentObject="[WA]" DisplayName="Выбор компании" sap:VirtualizedContainerService.HintSize="519,22" Result="[NewOwner]" />
+          <If Condition="[NewOwner Is Nothing]" sap:VirtualizedContainerService.HintSize="519,564">
+            <If.Then>
+              <TerminateWorkflow Exception="[New ArgumentNullException()]" sap:VirtualizedContainerService.HintSize="200,458" Reason="Не выбрано новое предприятие" />
+            </If.Then>
+            <If.Else>
+              <ForEach x:TypeArguments="b:Knowledge" DisplayName="ForEach&lt;Knowledge&gt;" sap:VirtualizedContainerService.HintSize="294,458" Values="[Values]">
+                <ActivityAction x:TypeArguments="b:Knowledge">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="b:Knowledge" Name="item" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="264,352">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="242,58">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[item.MyCompanyId]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[NewOwner.Id]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <InvokeMethod sap:VirtualizedContainerService.HintSize="242,130" MethodName="Save">
+                      <InvokeMethod.TargetObject>
+                        <InArgument x:TypeArguments="b:Knowledge">[item]</InArgument>
+                      </InvokeMethod.TargetObject>
+                    </InvokeMethod>
+                  </Sequence>
+                </ActivityAction>
+              </ForEach>
+            </If.Else>
+          </If>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

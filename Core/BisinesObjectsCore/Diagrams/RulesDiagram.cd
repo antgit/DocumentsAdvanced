@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BusinessObjects.Rules.BusinessRuleMethodBase&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="2" Width="2.25" />
+    <Members>
+      <Field Name="_handler" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAsAAAEAAEAACQAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Rules\BusinessRuleBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusinessObjects.Rules.ValidationRules&lt;T&gt;">
+    <Position X="6.75" Y="2" Width="1.75" />
+    <Members>
+      <Field Name="_list" Hidden="true" />
+      <Field Name="_listBriken" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAIAIAAAAAAIAAAAAAAAACEAAAAAAAAASAAAAAAAAAA=</HashCode>
+      <FileName>Rules\ValidationRules.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BusinessObjects.Rules.IBusinessRuleMethod&lt;T&gt;">
+    <Position X="1.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAsAAAEAAAAACQAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Rules\IBusinessRuleMethod.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="BusinessObjects.Rules.RuleSeverity">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rules\RuleSeverity.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

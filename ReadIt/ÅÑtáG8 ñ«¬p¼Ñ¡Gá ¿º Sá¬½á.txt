@@ -1,0 +1,9 @@
+//int id = (int)e.Item.Tag;
+                Library printLibrary = CollectionPrintableForms.Find(s => s.Id == id);
+                string fileName = printLibrary.FileName;
+                Stimulsoft.Report.StiReport report = Stimulsoft.Report.StiReport.GetReportFromAssembly(printLibrary.GetAssembly());
+                //Library lib = Op.Workarea.GetLibraryByFile(fileName);
+                //if (lib != null)
+                //    report = Stimulsoft.Report.StiReport.GetReportFromAssembly(lib.GetAssembly());
+                //else
+                //    report = Stimulsoft.Report.StiReport.GetReportFromAssembly(fileName, true);

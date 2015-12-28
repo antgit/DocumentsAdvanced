@@ -1,0 +1,47 @@
+Общее
+http://msdn.microsoft.com/library/dd483375(VS.100).aspx
+
+http://blogs.msdn.com/b/asgisv/archive/2010/02/10/displaying-net-framework-4-built-in-workflow-activity-icons-in-a-rehosted-workflow-designer.aspx
+
+
+
+Для компиляции кода workflow существует класс System.Workflow.ComponentModel.Compiler.WorkflowCompiler (находится в сборке System.Workflow.ComponentModel.dll). 
+
+WorkflowCompiler дает возможность откомпилировать код workflow, например, во время работы программы. Предположим, что есть activity в виде следующей строки: 
+
+string code = @"using System; using System.Workflow.ComponentModel; public class MyActivity : Activity {     protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)     {         Console.WriteLine(""Hello"");         return base.Execute(executionContext);     } }";
+
+Значение code необходимо записать во временный файл, потому что это требуется для работы WorkflowCompiler. После этого создадим компилятор и в метод Compile передадим путь к временному файлу. 
+
+public static Type CreateActivity(string activityTypeName, string activityCode) 
+{    
+// создать временный файл    
+string file = Path.Combine(Path.GetTempPath(), Path.GetTempFileName());    
+File.WriteAllText(file, activityCode);    
+string[] workflowFilenames = new string[] { file };     
+// создать компилятор    
+WorkflowCompiler compiler = new WorkflowCompiler();     
+WorkflowCompilerParameters compilerParameters = new WorkflowCompilerParameters();     
+compilerParameters.GenerateInMemory = true;     
+// компиляция кода activity    
+WorkflowCompilerResults res = compiler.Compile(compilerParameters, workflowFilenames);        
+// удалить временный файл    
+File.Delete(file);     
+if (res.Errors.HasErrors)         
+return null;     
+// получить тип activity    
+Type ret = res.CompiledAssembly.GetType(activityTypeName);     return ret; }
+
+Примечание: если workflow находится в двух файлах, например, Workflow1.cs и Workflow1.designer.cs, 
+то в метод WorkflowCompiler.Compile следует передать имена обоих файлов с указанием полного пути.
+
+Пример использования метода CreateActivity:
+
+Type ma = CreateActivity("MyActivity", code);
+
+В результате компилятор создаст сборку в памяти, а полученный тип можно использовать для запуска MyActivity.
+
+
+
+см
+http://msdn.microsoft.com/ru-ru/library/system.workflow.componentmodel.compiler.workflowcompiler.aspx

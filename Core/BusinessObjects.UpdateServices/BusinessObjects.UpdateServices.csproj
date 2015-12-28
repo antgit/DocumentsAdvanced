@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FB63764B-2FF7-4969-9D6D-6F07CC71D433}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessObjects.UpdateServices</RootNamespace>
+    <AssemblyName>BusinessObjects.UpdateServices</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Dll\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Dll\Release\</OutputPath>
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>BusinessObjectCore.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BusinessObjects.ReportingService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2011.1.1000.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report, Version=2011.1.1000.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Design, Version=2011.1.1000.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContentModuleUpdateServiceSystem.cs" />
+    <Compile Include="ControlSystemUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlSystemUpdate.Designer.cs">
+      <DependentUpon>ControlSystemUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceUpdate\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BisinesObjectsCore\BusinessObjectsCore.csproj">
+      <Project>{43F15828-0401-4CC3-BB65-FFF4799B3136}</Project>
+      <Name>BusinessObjectsCore</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessObjects.WindowsAdv\BusinessObjects.Windows.csproj">
+      <Project>{50F0D911-CB4F-4273-9939-4E5F8A2E880F}</Project>
+      <Name>BusinessObjects.Windows</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ControlSystemUpdate.resx">
+      <DependentUpon>ControlSystemUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BusinessObjectCore.snk" />
+    <None Include="Properties\DataSources\BusinessObjects.Account.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.Branche.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.ChainKind.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.CodeName.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.Country.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.Currency.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.CustomViewList.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.DataCatalog.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.Developer.DbObject.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.EntityDocument.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.EntityType.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.FactName.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.Folder.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.Hierarchy.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.Knowledge.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.Library.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.Message.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.Note.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.PriceName.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.Product.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.Rate.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.ResourceString.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.StorageCell.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.Town.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.WhatNew.datasource" />
+    <None Include="Properties\DataSources\BusinessObjects.XmlStorage.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceUpdate\ServiceUpdate.wsdl" />
+    <None Include="Service References\ServiceUpdate\ServiceUpdate.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceUpdate\ServiceUpdate1.wsdl" />
+    <None Include="Service References\ServiceUpdate\ServiceUpdate1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceUpdate\ServiceUpdate2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceUpdate\ServiceUpdate3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceUpdate\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUpdate\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUpdate\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUpdate\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUpdate\ServiceUpdate.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

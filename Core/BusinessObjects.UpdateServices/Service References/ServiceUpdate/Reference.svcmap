@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3c077cd0-0067-436f-9e5e-7bfecd277c88" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:11394/biservices/ServiceUpdate.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceUpdate.xsd" MetadataType="Schema" ID="0e994abf-26c9-44f6-8257-4215c0090c8d" SourceId="1" SourceUrl="http://localhost:11394/biservices/ServiceUpdate.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceUpdate.wsdl" MetadataType="Wsdl" ID="a62c7b63-e09a-4c82-a3a6-53818581c6ee" SourceId="1" SourceUrl="http://localhost:11394/biservices/ServiceUpdate.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ServiceUpdate1.wsdl" MetadataType="Wsdl" ID="6ba71d2f-918a-415c-8c0c-094621d09a55" SourceId="1" SourceUrl="http://localhost:11394/biservices/ServiceUpdate.svc?wsdl" />
+    <MetadataFile FileName="ServiceUpdate1.xsd" MetadataType="Schema" ID="1feb6fee-bc3d-4352-8d52-c20e3fa459b2" SourceId="1" SourceUrl="http://localhost:11394/biservices/ServiceUpdate.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceUpdate2.xsd" MetadataType="Schema" ID="9ae8cd02-a7c7-443a-aa71-509ae41bb789" SourceId="1" SourceUrl="http://localhost:11394/biservices/ServiceUpdate.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceUpdate3.xsd" MetadataType="Schema" ID="91475a72-b9dd-4236-822d-40059c2cc1d3" SourceId="1" SourceUrl="http://localhost:11394/biservices/ServiceUpdate.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceUpdate.disco" MetadataType="Disco" ID="694a7a37-4de6-4807-995a-2dcd18948fbc" SourceId="1" SourceUrl="http://localhost:11394/biservices/ServiceUpdate.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

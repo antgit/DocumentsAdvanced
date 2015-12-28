@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://docssys.com/biservices" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://docssys.com/biservices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://docssys.com/biservices/Imports">
+      <xsd:import schemaLocation="http://localhost:11394/biservices/ServiceUpdate.svc?xsd=xsd0" namespace="http://docssys.com/biservices" />
+      <xsd:import schemaLocation="http://localhost:11394/biservices/ServiceUpdate.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:11394/biservices/ServiceUpdate.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BusinessObjects" />
+      <xsd:import schemaLocation="http://localhost:11394/biservices/ServiceUpdate.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BusinessObjects.Developer" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceUpdate_CustomViewLists_InputMessage">
+    <wsdl:part name="parameters" element="tns:CustomViewLists" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_CustomViewLists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CustomViewListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_CodeNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:CodeNames" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_CodeNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CodeNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Currencies_InputMessage">
+    <wsdl:part name="parameters" element="tns:Currencies" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Currencies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CurrenciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Accounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:Accounts" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Accounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Countries_InputMessage">
+    <wsdl:part name="parameters" element="tns:Countries" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Countries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_DataCatalogs_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataCatalogs" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_DataCatalogs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataCatalogsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Folders_InputMessage">
+    <wsdl:part name="parameters" element="tns:Folders" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Folders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Hierarchies_InputMessage">
+    <wsdl:part name="parameters" element="tns:Hierarchies" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Hierarchies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HierarchiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Knowledges_InputMessage">
+    <wsdl:part name="parameters" element="tns:Knowledges" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Knowledges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KnowledgesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Libraries_InputMessage">
+    <wsdl:part name="parameters" element="tns:Libraries" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Libraries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LibrariesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Messages_InputMessage">
+    <wsdl:part name="parameters" element="tns:Messages" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Messages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Notes_InputMessage">
+    <wsdl:part name="parameters" element="tns:Notes" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Notes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_PriceNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceNames" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_PriceNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Products_InputMessage">
+    <wsdl:part name="parameters" element="tns:Products" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Products_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Rates_InputMessage">
+    <wsdl:part name="parameters" element="tns:Rates" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Rates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_StorageCells_InputMessage">
+    <wsdl:part name="parameters" element="tns:StorageCells" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_StorageCells_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StorageCellsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Towns_InputMessage">
+    <wsdl:part name="parameters" element="tns:Towns" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Towns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TownsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_WhatNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:WhatNews" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_WhatNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WhatNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_XmlStorages_InputMessage">
+    <wsdl:part name="parameters" element="tns:XmlStorages" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_XmlStorages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XmlStoragesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_EntityTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:EntityTypes" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_EntityTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EntityTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_EntityDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:EntityDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_EntityDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EntityDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_FactNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:FactNames" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_FactNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FactNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_DbObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:DbObjects" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_DbObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DbObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_ChainKinds_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChainKinds" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_ChainKinds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChainKindsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Branches_InputMessage">
+    <wsdl:part name="parameters" element="tns:Branches" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_Branches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BranchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_ResourceStrings_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceStrings" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUpdate_ResourceStrings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceStringsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceUpdate">
+    <wsdl:operation name="CustomViewLists">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/CustomViewLists" message="tns:IServiceUpdate_CustomViewLists_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/CustomViewListsResponse" message="tns:IServiceUpdate_CustomViewLists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeNames">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/CodeNames" message="tns:IServiceUpdate_CodeNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/CodeNamesResponse" message="tns:IServiceUpdate_CodeNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Currencies">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/Currencies" message="tns:IServiceUpdate_Currencies_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/CurrenciesResponse" message="tns:IServiceUpdate_Currencies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Accounts">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/Accounts" message="tns:IServiceUpdate_Accounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/AccountsResponse" message="tns:IServiceUpdate_Accounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Countries">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/Countries" message="tns:IServiceUpdate_Countries_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/CountriesResponse" message="tns:IServiceUpdate_Countries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataCatalogs">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/DataCatalogs" message="tns:IServiceUpdate_DataCatalogs_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/DataCatalogsResponse" message="tns:IServiceUpdate_DataCatalogs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Folders">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/Folders" message="tns:IServiceUpdate_Folders_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/FoldersResponse" message="tns:IServiceUpdate_Folders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Hierarchies">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/Hierarchies" message="tns:IServiceUpdate_Hierarchies_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/HierarchiesResponse" message="tns:IServiceUpdate_Hierarchies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Knowledges">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/Knowledges" message="tns:IServiceUpdate_Knowledges_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/KnowledgesResponse" message="tns:IServiceUpdate_Knowledges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Libraries">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/Libraries" message="tns:IServiceUpdate_Libraries_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/LibrariesResponse" message="tns:IServiceUpdate_Libraries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Messages">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/Messages" message="tns:IServiceUpdate_Messages_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/MessagesResponse" message="tns:IServiceUpdate_Messages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Notes">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/Notes" message="tns:IServiceUpdate_Notes_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/NotesResponse" message="tns:IServiceUpdate_Notes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceNames">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/PriceNames" message="tns:IServiceUpdate_PriceNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/PriceNamesResponse" message="tns:IServiceUpdate_PriceNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Products">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/Products" message="tns:IServiceUpdate_Products_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/ProductsResponse" message="tns:IServiceUpdate_Products_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Rates">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/Rates" message="tns:IServiceUpdate_Rates_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/RatesResponse" message="tns:IServiceUpdate_Rates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StorageCells">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/StorageCells" message="tns:IServiceUpdate_StorageCells_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/StorageCellsResponse" message="tns:IServiceUpdate_StorageCells_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Towns">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/Towns" message="tns:IServiceUpdate_Towns_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/TownsResponse" message="tns:IServiceUpdate_Towns_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WhatNews">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/WhatNews" message="tns:IServiceUpdate_WhatNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/WhatNewsResponse" message="tns:IServiceUpdate_WhatNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XmlStorages">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/XmlStorages" message="tns:IServiceUpdate_XmlStorages_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/XmlStoragesResponse" message="tns:IServiceUpdate_XmlStorages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EntityTypes">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/EntityTypes" message="tns:IServiceUpdate_EntityTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/EntityTypesResponse" message="tns:IServiceUpdate_EntityTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EntityDocuments">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/EntityDocuments" message="tns:IServiceUpdate_EntityDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/EntityDocumentsResponse" message="tns:IServiceUpdate_EntityDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FactNames">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/FactNames" message="tns:IServiceUpdate_FactNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/FactNamesResponse" message="tns:IServiceUpdate_FactNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DbObjects">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/DbObjects" message="tns:IServiceUpdate_DbObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/DbObjectsResponse" message="tns:IServiceUpdate_DbObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChainKinds">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/ChainKinds" message="tns:IServiceUpdate_ChainKinds_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/ChainKindsResponse" message="tns:IServiceUpdate_ChainKinds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Branches">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/Branches" message="tns:IServiceUpdate_Branches_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/BranchesResponse" message="tns:IServiceUpdate_Branches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResourceStrings">
+      <wsdl:input wsaw:Action="http://docssys.com/biservices/IServiceUpdate/ResourceStrings" message="tns:IServiceUpdate_ResourceStrings_InputMessage" />
+      <wsdl:output wsaw:Action="http://docssys.com/biservices/IServiceUpdate/ResourceStringsResponse" message="tns:IServiceUpdate_ResourceStrings_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

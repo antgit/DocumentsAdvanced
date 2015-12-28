@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43F15828-0401-4CC3-BB65-FFF4799B3136}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessObjects</RootNamespace>
+    <AssemblyName>BusinessObjectsCore</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>BusinessObjectCore.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Dll\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\..\Dll\Debug\BusinessObjectsCore.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Dll\Release\</OutputPath>
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\Dll\Release\BusinessObjectsCore.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BusinessObjectsLic">
+      <HintPath>..\UsedDll\BusinessObjectsLic.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgentRelated\AgentAddress.cs" />
+    <Compile Include="AgentRelated\Contact.cs" />
+    <Compile Include="AgentRelated\Passport.cs" />
+    <Compile Include="AgentRelated\Bank.cs" />
+    <Compile Include="AgentRelated\Company.cs" />
+    <Compile Include="AgentRelated\DrivingLicence.cs" />
+    <Compile Include="AgentRelated\Employer.cs" />
+    <Compile Include="AgentRelated\People.cs" />
+    <Compile Include="AgentRelated\Store.cs" />
+    <Compile Include="BaseObj\BaseCore.cs" />
+    <Compile Include="BaseObj\BaseCoreObject.cs" />
+    <Compile Include="BaseObj\Branche.cs" />
+    <Compile Include="BaseObj\BasePropertyChangeSupport.cs" />
+    <Compile Include="BaseObj\ChainAdvanced.cs" />
+    <Compile Include="BaseObj\ChainNotes.cs" />
+    <Compile Include="BaseObj\CodeValue.cs" />
+    <Compile Include="BaseObj\DocumentValueView.cs" />
+    <Compile Include="BaseObj\KeyResource.cs" />
+    <Compile Include="BaseObj\ResourceString.cs" />
+    <Compile Include="Common\AsyncResult.cs" />
+    <Compile Include="Common\Translit.cs" />
+    <Compile Include="CoreObjects\Account.cs" />
+    <Compile Include="CoreObjects\Agent.cs" />
+    <Compile Include="CoreObjects\AgentBankAccount.cs" />
+    <Compile Include="CoreObjects\Analitic.cs" />
+    <Compile Include="BaseObj\ChainKindContentType.cs" />
+    <Compile Include="CoreObjects\Calendar.cs" />
+    <Compile Include="CoreObjects\CodeName.cs" />
+    <Compile Include="CoreObjects\CodeNameDocumentKind.cs" />
+    <Compile Include="CoreObjects\CodeNameEntityKind.cs" />
+    <Compile Include="CoreObjects\Currency.cs" />
+    <Compile Include="CoreObjects\DataCatalog.cs" />
+    <Compile Include="CoreObjects\DateRegion.cs" />
+    <Compile Include="CoreObjects\Depatment.cs" />
+    <Compile Include="CoreObjects\Device.cs" />
+    <Compile Include="CoreObjects\Equipment.cs" />
+    <Compile Include="CoreObjects\EquipmentDetail.cs" />
+    <Compile Include="CoreObjects\EquipmentNode.cs" />
+    <Compile Include="CoreObjects\Event.cs" />
+    <Compile Include="CoreObjects\FileData.cs" />
+    <Compile Include="CoreObjects\FileDataVersion.cs" />
+    <Compile Include="CoreObjects\Folder.cs" />
+    <Compile Include="CoreObjects\Knowledge.cs" />
+    <Compile Include="CoreObjects\Message.cs" />
+    <Compile Include="CoreObjects\Note.cs" />
+    <Compile Include="CoreObjects\PriceRegion.cs" />
+    <Compile Include="CoreObjects\RouteEvent.cs" />
+    <Compile Include="CoreObjects\RouteMember.cs" />
+    <Compile Include="CoreObjects\Series.cs" />
+    <Compile Include="CoreObjects\StorageCell.cs" />
+    <Compile Include="CoreObjects\Task.cs" />
+    <Compile Include="CoreObjects\TimePeriods.cs" />
+    <Compile Include="CoreObjects\WebService.cs" />
+    <Compile Include="CoreObjects\WhatNew.cs" />
+    <Compile Include="Documents\Configs\ConfigDocumentBase.cs" />
+    <Compile Include="Documents\Configs\ConfigFinances.cs" />
+    <Compile Include="Documents\Configs\ConfigPrices.cs" />
+    <Compile Include="Documents\Configs\ConfigSales.cs" />
+    <Compile Include="Documents\Configs\ConfigService.cs" />
+    <Compile Include="Documents\Configs\ConfigTaxes.cs" />
+    <Compile Include="Documents\DocumentAnalitic.cs" />
+    <Compile Include="Documents\DocumentContractor.cs" />
+    <Compile Include="Documents\DocumentDetailAnalitic.cs" />
+    <Compile Include="Documents\DocumentSecure.cs" />
+    <Compile Include="Documents\DocumentStrinData.cs" />
+    <Compile Include="Documents\DocumentWorkFlow.cs" />
+    <Compile Include="Documents\DocumentXml.cs" />
+    <Compile Include="BaseObj\LinkedXmlData.cs" />
+    <Compile Include="Documents\Finance\DocumentFinanceConfig.cs" />
+    <Compile Include="Documents\Mktg\DocumentDetailMktg.cs" />
+    <Compile Include="Documents\Mktg\DocumentMktg.cs" />
+    <Compile Include="Documents\Person\DocumentDetailPerson.cs" />
+    <Compile Include="Documents\Person\DocumentPerson.cs" />
+    <Compile Include="Documents\Person\PersonXml.cs" />
+    <Compile Include="Documents\Pl\DocumentPlan.cs" />
+    <Compile Include="Documents\Pl\DocumentDetailPlan.cs" />
+    <Compile Include="Documents\Price\DocumentPricesConfig.cs" />
+    <Compile Include="Documents\Route\DocumentDetailRoute.cs" />
+    <Compile Include="Documents\Route\DocumentRoute.cs" />
+    <Compile Include="Documents\Route\DocumentDetailCoordinates.cs" />
+    <Compile Include="Documents\Sales\DocumentSalesConfig.cs" />
+    <Compile Include="Documents\Service\DocumentServiceConfig.cs" />
+    <Compile Include="Documents\Service\DocumentDetailService.cs" />
+    <Compile Include="Documents\Service\DocumentService.cs" />
+    <Compile Include="Documents\Taxes\DocumentDetailTax.cs" />
+    <Compile Include="Documents\Taxes\DocumentTaxesConfig.cs" />
+    <Compile Include="Documents\Taxes\DocumentTaxes.cs" />
+    <Compile Include="CoreObjects\HierarchyContentType.cs" />
+    <Compile Include="Global\FastMethodInvoker.cs" />
+    <Compile Include="Global\SalesExtentions.cs" />
+    <Compile Include="Interfaces\ICode.cs" />
+    <Compile Include="Interfaces\ICompanyOwner.cs" />
+    <Compile Include="Interfaces\IHierarchySupport.cs" />
+    <Compile Include="Interfaces\ICopyValue.cs" />
+    <Compile Include="Interfaces\IVirtualGroup.cs" />
+    <Compile Include="Interfaces\IVirtualGroupBuilder.cs" />
+    <Compile Include="CoreObjects\LibraryReportParam.cs" />
+    <Compile Include="CoreObjects\Country.cs" />
+    <Compile Include="CoreObjects\Ruleset.cs" />
+    <Compile Include="CoreObjects\Territory.cs" />
+    <Compile Include="CoreObjects\Town.cs" />
+    <Compile Include="CoreObjects\XmlStorage.cs" />
+    <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="DbKinds\EntityProperty.cs" />
+    <Compile Include="DbKinds\EntityPropertyGroup.cs" />
+    <Compile Include="DbKinds\EntityPropertyName.cs" />
+    <Compile Include="Developer\DbObjectChild.cs" />
+    <Compile Include="Developer\DbObject.cs" />
+    <Compile Include="Documents\Autonum.cs" />
+    <Compile Include="Documents\Contract\DocumentContract.cs" />
+    <Compile Include="Documents\Contract\DocumentDetailContract.cs" />
+    <Compile Include="Documents\Taxe.cs" />
+    <Compile Include="Documents\Finance\DocumentDetailFinance.cs" />
+    <Compile Include="Documents\Finance\DocumentFinance.cs" />
+    <Compile Include="Documents\LogUserAction.cs" />
+    <Compile Include="Documents\Price\DocumentDetailPriceList.cs" />
+    <Compile Include="Exceptions\ObjectReaderException.cs" />
+    <Compile Include="Facts\FactColumnEntityKind.cs" />
+    <Compile Include="Facts\FactView.cs" />
+    <Compile Include="Interfaces\IChainAdvanced.cs" />
+    <Compile Include="Interfaces\IFacts.cs" />
+    <Compile Include="Interfaces\IReportChainSupport.cs" />
+    <Compile Include="CoreObjects\Library.cs" />
+    <Compile Include="CoreObjects\LibraryContent.cs" />
+    <Compile Include="CoreObjects\PriceName.cs" />
+    <Compile Include="CoreObjects\PriceValue.cs" />
+    <Compile Include="CoreObjects\ProcuctUnit.cs" />
+    <Compile Include="CoreObjects\Product.cs" />
+    <Compile Include="CoreObjects\ProductRecipe.cs" />
+    <Compile Include="CoreObjects\Rate.cs" />
+    <Compile Include="CoreObjects\Recipe.cs" />
+    <Compile Include="CoreObjects\ReportChain.cs" />
+    <Compile Include="CoreObjects\Unit.cs" />
+    <Compile Include="Documents\Document.cs" />
+    <Compile Include="Documents\DocumentBase.cs" />
+    <Compile Include="Documents\DocumentDetailBase.cs" />
+    <Compile Include="Documents\BookKeep\DocumentBookkeep.cs" />
+    <Compile Include="Documents\BookKeep\DocumentDetailBookKeep.cs" />
+    <Compile Include="Documents\DocumentSign.cs" />
+    <Compile Include="Documents\Sales\DocumentDetailSale.cs" />
+    <Compile Include="Documents\Sales\DocumentSales.cs" />
+    <Compile Include="Documents\Price\DocumentPrices.cs" />
+    <Compile Include="Documents\Store\DocumentDetailStore.cs" />
+    <Compile Include="Documents\Store\DocumentStore.cs" />
+    <Compile Include="Documents\Store\StoreRest.cs" />
+    <Compile Include="Exceptions\SecurityException.cs" />
+    <Compile Include="Exceptions\ConnectionException.cs" />
+    <Compile Include="BaseObj\CustomProperty.cs" />
+    <Compile Include="BaseObj\CustomPropertyDescriptor.cs" />
+    <Compile Include="BaseObj\CasheData.cs" />
+    <Compile Include="Interfaces\ICustomPropertySupport.cs" />
+    <Compile Include="CoreObjects\CustomViewColumn.cs" />
+    <Compile Include="CoreObjects\CustomViewList.cs" />
+    <Compile Include="DbKinds\BaseKind.cs" />
+    <Compile Include="DbKinds\ProcedureMap.cs" />
+    <Compile Include="DbKinds\FlagValue.cs" />
+    <Compile Include="Exceptions\DataBaseExeption.cs" />
+    <Compile Include="DbKinds\EntityType.cs" />
+    <Compile Include="DbKinds\EntityKind.cs" />
+    <Compile Include="DbKinds\EntityDocumentKind.cs" />
+    <Compile Include="DbKinds\EntityDocument.cs" />
+    <Compile Include="Common\Hex.cs" />
+    <Compile Include="BaseObj\ErrorLog.cs" />
+    <Compile Include="Facts\FactColumn.cs" />
+    <Compile Include="Facts\FactDate.cs" />
+    <Compile Include="Facts\FactName.cs" />
+    <Compile Include="Facts\FactValue.cs" />
+    <Compile Include="Global\GlobalMethodAlias.cs" />
+    <Compile Include="Global\GlobalPrivatePropertyNames.cs" />
+    <Compile Include="Global\GlobalSchemaNames.cs" />
+    <Compile Include="Global\GlobalSqlParamNames.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="CoreObjects\Hierarchy.cs" />
+    <Compile Include="CoreObjects\HierarchyContent.cs" />
+    <Compile Include="Exceptions\HierarchyContentExeption.cs" />
+    <Compile Include="Interfaces\IBase.cs" />
+    <Compile Include="Interfaces\ICoreObject.cs" />
+    <Compile Include="Interfaces\IChain.cs" />
+    <Compile Include="Interfaces\IDocument.cs" />
+    <Compile Include="Interfaces\IDocumentDetail.cs" />
+    <Compile Include="Interfaces\IDocumentView.cs" />
+    <Compile Include="Interfaces\ISecurirty.cs" />
+    <Compile Include="Common\AsyncResultNoResult.cs" />
+    <Compile Include="Exceptions\MethodFindException.cs" />
+    <Compile Include="Interfaces\IRelationMany.cs" />
+    <Compile Include="Interfaces\IRelationSingle.cs" />
+    <Compile Include="BaseObj\Relation.cs" />
+    <Compile Include="Interfaces\IBusinessMethod.cs" />
+    <Compile Include="Interfaces\IBusinessRuleMethod.cs" />
+    <Compile Include="Models\AgentModel.cs" />
+    <Compile Include="Models\AnaliticModel.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\CoreModel.cs" />
+    <Compile Include="Models\CurrencyModel.cs" />
+    <Compile Include="Models\DepatmentModel.cs" />
+    <Compile Include="Models\KnowledgeModel.cs" />
+    <Compile Include="Models\MessageModel.cs" />
+    <Compile Include="Models\ModelCasheData.cs" />
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\ReportModel.cs" />
+    <Compile Include="Models\TaskModel.cs" />
+    <Compile Include="Models\UidModel.cs" />
+    <Compile Include="Models\UnitModel.cs" />
+    <Compile Include="Print\PreparePrintContractPrinter.cs" />
+    <Compile Include="Print\PreparePrintPerson.cs" />
+    <Compile Include="Print\PreparePrintFinance.cs" />
+    <Compile Include="Print\PreparePrintPrices.cs" />
+    <Compile Include="Print\PreparePrintRoute.cs" />
+    <Compile Include="Print\PreparePrintSales.cs" />
+    <Compile Include="Print\PreparePrintServices.cs" />
+    <Compile Include="Print\PreparePrintTaxes.cs" />
+    <Compile Include="Print\PrintDataDocumentHeader.cs" />
+    <Compile Include="Print\PrintDataDocumentHeaderPrice.cs" />
+    <Compile Include="Print\PrintDataDocumentPersonHeader.cs" />
+    <Compile Include="Print\PrintDataDocumentPrinterDetail.cs" />
+    <Compile Include="Print\PrintDataDocumentProductDetail.cs" />
+    <Compile Include="ProductRelated\Auto.cs" />
+    <Compile Include="Security\RandomPasswordGenerator.cs" />
+    <Compile Include="Security\UserAccount.cs" />
+    <Compile Include="VirtualHierarchy\VirtualHierarchyAgentAlphabet.cs" />
+    <Compile Include="VirtualHierarchy\VirtualHierarchyAnaliticTradeGroup.cs" />
+    <Compile Include="VirtualHierarchy\VirtualHierarchyProductAlphabet.cs" />
+    <Compile Include="VirtualHierarchy\VirtualHierarchyProductBrand.cs" />
+    <Compile Include="VirtualHierarchy\VirtualHierarchyProductGroup.cs" />
+    <Compile Include="Search\FinderAgent.cs" />
+    <Compile Include="Search\FinderProduct.cs" />
+    <Compile Include="Search\ObjectFinder.cs" />
+    <Compile Include="Security\ElementRightView.cs" />
+    <Compile Include="Interfaces\IUserRight.cs" />
+    <Compile Include="Interfaces\IUserRightElement.cs" />
+    <Compile Include="Security\NamedRight.cs" />
+    <Compile Include="Security\Right.cs" />
+    <Compile Include="Security\CommonRightView.cs" />
+    <Compile Include="Security\RightObjectProperty.cs" />
+    <Compile Include="Security\Secure.cs" />
+    <Compile Include="Security\UserRightCommon.cs" />
+    <Compile Include="Security\UserRightElement.cs" />
+    <Compile Include="Exceptions\SqlReturnException.cs" />
+    <Compile Include="Security\Uid.cs" />
+    <Compile Include="Security\UserRightBase.cs" />
+    <Compile Include="Exceptions\ValidateExeption.cs" />
+    <Compile Include="ToDoList.cs" />
+    <Compile Include="VirtualHierarchy\VirtualHierarchyProductKinds.cs" />
+    <Compile Include="WA\Workarea.cs" />
+    <Compile Include="WA\WorkareaBase.cs" />
+    <Compile Include="Interfaces\IWorkarea.cs" />
+    <Compile Include="BaseObj\Chain.cs" />
+    <Compile Include="Common\Period.cs" />
+    <Compile Include="BaseObj\ChainKind.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseObj\State.cs" />
+    <Compile Include="BaseObj\SystemParameter.cs" />
+    <Compile Include="WA\WorkareaBase_DbEntity.cs" />
+    <Compile Include="WA\WorkareaBase_Links.cs" />
+    <Compile Include="WA\WorkareaBase_Tools.cs" />
+    <Compile Include="WA\WorkareaCashe.cs" />
+    <Compile Include="WA\WorkareaExtention.cs" />
+    <Compile Include="WA\Workarea_CustomProperty.cs" />
+    <Compile Include="WA\Workarea_Database.cs" />
+    <Compile Include="Global\WellKnownDbEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SqlUpdate\20110802.sql" />
+    <None Include="BusinessObjectCore.snk" />
+    <None Include="Diagrams\DiagramCustomProperty.cd" />
+    <None Include="Diagrams\DiagramChain.cd" />
+    <None Include="Diagrams\DiagramCore.cd" />
+    <None Include="Diagrams\DiagramKinds.cd" />
+    <None Include="Diagrams\DiagramProcedureMap.cd" />
+    <None Include="Diagrams\RulesDiagram.cd" />
+    <Content Include="Setup_BusinessObjects.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

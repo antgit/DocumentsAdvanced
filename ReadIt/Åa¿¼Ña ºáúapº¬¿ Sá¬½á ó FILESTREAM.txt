@@ -1,0 +1,13 @@
+-- Create the test table for FILESTREAM
+CREATE TABLE [dbo].[tFileStreamTest]( 
+[id] [int] IDENTITY(1,1) NOT NULL, 
+[FileStreamTest] [varbinary](max) FILESTREAM NULL, 
+[FileGUID] UNIQUEIDENTIFIER NOT NULL ROWGUIDCOL 
+UNIQUE DEFAULT NEWID()
+) ON [PRIMARY]
+FILESTREAM_ON [FileStreamGroup1];
+GO
+
+Insert into dbo.tFileStreamTest (FileStreamTest)
+SELECT * FROM 
+OPENROWSET(BULK N'C:\Users\Δενθρ\Pictures\000000rr.jpg' ,SINGLE_BLOB) AS Document

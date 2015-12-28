@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="BusinessObjects.Web" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="BusinessObjects.Web" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="BusinessObjects.Web/Imports">
+      <xsd:import schemaLocation="http://localhost:11394/biservices/WebOrdersService.svc?xsd=xsd0" namespace="BusinessObjects.Web" />
+      <xsd:import schemaLocation="http://localhost:11394/biservices/WebOrdersService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWebOrdersService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IWebOrdersService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebOrdersService_CreateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IWebOrdersService_CreateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebOrdersService_CreateProductEnd_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductEnd" />
+  </wsdl:message>
+  <wsdl:message name="IWebOrdersService_CreateProductEnd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductEndResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebOrdersService_CreateBrand_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBrand" />
+  </wsdl:message>
+  <wsdl:message name="IWebOrdersService_CreateBrand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBrandResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebOrdersService_CreateTradeMark_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTradeMark" />
+  </wsdl:message>
+  <wsdl:message name="IWebOrdersService_CreateTradeMark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTradeMarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebOrdersService_CreateProductType_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductType" />
+  </wsdl:message>
+  <wsdl:message name="IWebOrdersService_CreateProductType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebOrdersService_CreateAnalitic_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAnalitic" />
+  </wsdl:message>
+  <wsdl:message name="IWebOrdersService_CreateAnalitic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAnaliticResponse" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IWebOrdersService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Login">
+      <wsdl:input wsaw:Action="BusinessObjects.Web/IWebOrdersService/Login" message="tns:IWebOrdersService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="BusinessObjects.Web/IWebOrdersService/LoginResponse" message="tns:IWebOrdersService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="CreateProduct">
+      <wsdl:input wsaw:Action="BusinessObjects.Web/IWebOrdersService/CreateProduct" message="tns:IWebOrdersService_CreateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="BusinessObjects.Web/IWebOrdersService/CreateProductResponse" message="tns:IWebOrdersService_CreateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="CreateProductEnd">
+      <wsdl:input wsaw:Action="BusinessObjects.Web/IWebOrdersService/CreateProductEnd" message="tns:IWebOrdersService_CreateProductEnd_InputMessage" />
+      <wsdl:output wsaw:Action="BusinessObjects.Web/IWebOrdersService/CreateProductEndResponse" message="tns:IWebOrdersService_CreateProductEnd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="CreateBrand">
+      <wsdl:input wsaw:Action="BusinessObjects.Web/IWebOrdersService/CreateBrand" message="tns:IWebOrdersService_CreateBrand_InputMessage" />
+      <wsdl:output wsaw:Action="BusinessObjects.Web/IWebOrdersService/CreateBrandResponse" message="tns:IWebOrdersService_CreateBrand_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="CreateTradeMark">
+      <wsdl:input wsaw:Action="BusinessObjects.Web/IWebOrdersService/CreateTradeMark" message="tns:IWebOrdersService_CreateTradeMark_InputMessage" />
+      <wsdl:output wsaw:Action="BusinessObjects.Web/IWebOrdersService/CreateTradeMarkResponse" message="tns:IWebOrdersService_CreateTradeMark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="CreateProductType">
+      <wsdl:input wsaw:Action="BusinessObjects.Web/IWebOrdersService/CreateProductType" message="tns:IWebOrdersService_CreateProductType_InputMessage" />
+      <wsdl:output wsaw:Action="BusinessObjects.Web/IWebOrdersService/CreateProductTypeResponse" message="tns:IWebOrdersService_CreateProductType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="CreateAnalitic">
+      <wsdl:input wsaw:Action="BusinessObjects.Web/IWebOrdersService/CreateAnalitic" message="tns:IWebOrdersService_CreateAnalitic_InputMessage" />
+      <wsdl:output wsaw:Action="BusinessObjects.Web/IWebOrdersService/CreateAnaliticResponse" message="tns:IWebOrdersService_CreateAnalitic_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

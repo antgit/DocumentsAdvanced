@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BusinessObjects.EntityDocumentKind">
+    <Position X="2" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>DbKinds\EntityDocumentKind.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessObjects.EntityKind">
+    <Position X="7.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>DbKinds\EntityKind.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessObjects.BaseKind">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="_code" Hidden="true" />
+      <Field Name="_entityId" Hidden="true" />
+      <Field Name="_memo" Hidden="true" />
+      <Field Name="_name" Hidden="true" />
+      <Field Name="_subKind" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AARIoJAAAAaAAAAEAAAgAAQAAAEAAEICAAAAAAAgwgA=</HashCode>
+      <FileName>DbKinds\BaseKind.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

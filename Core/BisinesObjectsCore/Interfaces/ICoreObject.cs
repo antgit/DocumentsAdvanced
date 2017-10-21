@@ -59,12 +59,12 @@ namespace BusinessObjects
         /// <returns></returns>
         byte[] GetVersion();
         /// <summary>
-        /// Загузка данных по идентификатору
+        /// Загрузка данных по идентификатору
         /// </summary>
         /// <param name="procedureName">Хранимая процедура</param>
         void Load(string procedureName);
         /// <summary>
-        /// Загузка данных
+        /// Загрузка данных
         /// </summary>
         /// <param name="reader">Объект System.Data.SqlClient.SqlDataReader содержащий данные</param>
         /// <param name="endInit">Закончить инициализацию объекта</param>
